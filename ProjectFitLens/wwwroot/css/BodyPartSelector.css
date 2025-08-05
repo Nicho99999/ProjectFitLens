@@ -1,0 +1,283 @@
+
+.container {
+    transform: translateY(60px); /* Moves the SVG down by 10px */
+    width: 750px;  /* Adjust width */
+    height: 900px; /* Adjust height */
+    overflow: hidden; /* Prevent overflow if needed */
+    background-color: transparent; /* Ensure no background color overrides */
+
+}
+
+
+html body {
+    background-color: #1D1D1D;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+h2 {
+    color: white;
+}
+
+.muscle-groups {
+    display: flex; /* Use flex to help with positioning */
+    min-height: 600px; /* Set a minimum height */
+    transform: translate(-50px, 50px); /* Move the SVG 50px right and 100px down */
+}
+
+svg {
+    margin-left: 800px; /* Move 20px from the left */
+    transform: scale(2.3); /* Scales the SVG by 1.5 times its original size */
+
+}
+
+.muscle-groups h1 {
+    margin: -.5rem -1rem 1rem;
+    padding: 0 1rem .75rem;
+    background:#FF7E7E;
+    color: #eee;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.muscle-groups h2 {
+    margin: 0 0 .5rem;
+    font-size: .8rem;
+    letter-spacing: -.03em;
+    text-transform: uppercase;
+}
+
+.muscle-groups label + h2 {
+    margin-top: 1rem;
+}
+
+.muscle-groups label {
+    width: 50px;
+    display: block;
+    color: white;
+    margin-bottom: .5rem;
+    cursor: pointer;
+    font-size: .7rem;
+    opacity: .5;
+    position: relative;
+    z-index: 200; /* $label-z */
+    border-left: 5px solid transparent;
+    padding-left: 6px;
+    margin-left: -11px;
+    transition: opacity .25s ease, color .25s ease; /* Add transition for smooth effect */
+
+}
+
+.muscle-groups label:hover,
+.muscle-groups label.hover {
+    opacity: 1;
+    border-color: rgb(51, 51, 51);
+    color: #FF7E7E; /* Change color on hover */
+
+}
+
+.muscle-groups input:checked + label {
+    opacity: 1;
+    font-weight: bold;
+    color:#FF7E7E;
+}
+
+.muscle-groups svg {
+    position: absolute;
+    right: -1.5rem;
+    bottom: 3rem;
+    height: 350px;
+    z-index: 100; /* $svg-z */
+
+}
+
+.muscle-groups svg g[id] path {
+    opacity: .5;
+    transition: opacity .25s ease-in-out;
+    
+
+}
+
+.muscle-groups svg g g[id]:hover path {
+    cursor: pointer;
+    opacity: .5;
+    fill: #FF7E7E !important;
+}
+
+.muscle-groups .muscles-helper {
+    display: none;
+    
+
+}
+
+.muscle-groups input[id^="obliques"]:hover ~ svg #Obliques path,
+.muscle-groups input[id^="abs"]:hover ~ svg #Abs path,
+.muscle-groups input[id^="quads"]:hover ~ svg #Quads path,
+.muscle-groups input[id^="biceps"]:hover ~ svg #Biceps path,
+.muscle-groups input[id^="adductors"]:hover ~ svg #Adductors path,
+.muscle-groups input[id^="pectorals"]:hover ~ svg #Pectorals path,
+.muscle-groups input[id^="deltoids"]:hover ~ svg #Deltoids path,
+.muscle-groups input[id^="hamstrings"]:hover ~ svg #Hamstrings path,
+.muscle-groups input[id^="forearms"]:hover ~ svg #Forearms path,
+.muscle-groups input[id^="calves"]:hover ~ svg #Calves path,
+.muscle-groups input[id^="triceps"]:hover ~ svg #Triceps path,
+.muscle-groups input[id^="glutes"]:hover ~ svg #Glutes path,
+.muscle-groups input[id^="lats"]:hover ~ svg #Lats path,
+.muscle-groups input[id^="trapezius"]:hover ~ svg #Trapezius path {
+    opacity: .75;
+
+}
+
+.muscle-groups .obliques:checked ~ svg #Obliques path,
+.muscle-groups .abs:checked ~ svg #Abs path,
+.muscle-groups .quads:checked ~ svg #Quads path,
+.muscle-groups .biceps:checked ~ svg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+    color: #c32e2e !important;
+    z-index: 1;
+    font-family: helvetica;
+
+
+}
+
+a:hover {
+    color: #333333;
+}
+
+
+
+
+
+    /*VARIABLE*/
+:root {
+    display: block;
+    --btWidthHeight: 30px;
+    --btThickness: 3px;
+    --btColor: #999 !important;
+    --btHoverColor: #c32e2e;
+    --btActiveColor: #c32e2e;
+    --btTransiTime: 0.05s;
+}
+/*END VARIABLE
+---------------------------------------------------------*/
+
+/*GENERAL*/
+
+/*END GENERAL
+---------------------------------------------------------*/
+
+/*BUTTONS CREATION*/
+.back, .next {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0 20px 0 0;
+    left: 10px;
+    top: 10px;
+    width: var(--btWidthHeight);
+    height: var(--btWidthHeight);
+    border: solid var(--btColor) var(--btThickness);
+    border-radius: 100%;
+    z-index: 999; /* Ensure it appears above other elements */
+
+}
+
+.back:before, .next:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    border: solid var(--btColor) var(--btThickness);
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg) skewX(10deg) skewY(10deg);
+}
+
+.back:before {
+    border-right: none;
+    border-bottom: none;
+    left: 58%;
+    display: block;
+}
+
+.next:before {
+    border-top: none;
+    border-left: none;
+    left: 42%;
+    display: block;
+}
+/*END BUTTONS CREATION
+---------------------------------------------------------*/
+
+
+/*EFFECT*/
+.back, .next {
+    display: block;
+    cursor: pointer;
+    transition: all var(--btTransiTime) linear;
+}
+
+.back:before, .next:before {
+    transition: all var(--btTransiTime) linear;
+}
+
+.back:hover, .next:hover {
+    border-width: calc(var(--btThickness) + 1px);
+    border-color: var(--btHoverColor);
+    display: block;
+}
+
+.back:hover:before, .next:hover:before {
+    border-width: calc(var(--btThickness) + 1px);
+    border-color: var(--btHoverColor);
+    display: block;
+}
+
+.back:active:before {
+    left: 52%;
+}
+
+.next:active:before {
+    left: 48%;
+}
+
+.btclick {
+    border-width: calc(var(--btThickness) + 2px);
+    border-color: var(--btActiveColor);
+}
+
+

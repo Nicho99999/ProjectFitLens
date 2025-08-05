@@ -1,0 +1,12 @@
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/bin/Debug/net8.0/CalorieServices.deps.json
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/bin/Debug/net8.0/CalorieServices.dll
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/bin/Debug/net8.0/CalorieServices.pdb
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/obj/Debug/net8.0/CalorieServices.csproj.AssemblyReference.cache
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/obj/Debug/net8.0/CalorieServices.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/obj/Debug/net8.0/CalorieServices.AssemblyInfoInputs.cache
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/obj/Debug/net8.0/CalorieServices.AssemblyInfo.cs
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/obj/Debug/net8.0/CalorieServices.csproj.CoreCompileInputs.cache
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/obj/Debug/net8.0/CalorieServices.dll
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/obj/Debug/net8.0/refint/CalorieServices.dll
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/obj/Debug/net8.0/CalorieServices.pdb
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/CalorieServices/obj/Debug/net8.0/ref/CalorieServices.dll

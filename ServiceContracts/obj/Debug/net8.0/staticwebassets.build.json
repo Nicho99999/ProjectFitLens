@@ -1,0 +1,115 @@
+{
+  "Version": 1,
+  "Hash": "KG6u0zqC2bkjhCcG5F3I/cxDzCcxwDCbS6nWlROYVc8=",
+  "Source": "ServiceContracts",
+  "BasePath": "_content/ServiceContracts",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/Entites/Entites.csproj",
+      "Version": 2,
+      "Source": "Entites",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Entites/wwwroot",
+      "Source": "Entites",
+      "ContentRoot": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/Entites/wwwroot/",
+      "BasePath": "_content/Entites",
+      "Pattern": "**"
+    },
+    {
+      "Name": "ServiceContracts/wwwroot",
+      "Source": "ServiceContracts",
+      "ContentRoot": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ServiceContracts/wwwroot/",
+      "BasePath": "_content/ServiceContracts",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/Entites/wwwroot/background.png",
+      "SourceId": "Entites",
+      "SourceType": "Project",
+      "ContentRoot": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/Entites/wwwroot/",
+      "BasePath": "_content/Entites",
+      "RelativePath": "background.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/background.png"
+    },
+    {
+      "Identity": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/Entites/wwwroot/exampleJsInterop.js",
+      "SourceId": "Entites",
+      "SourceType": "Project",
+      "ContentRoot": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/Entites/wwwroot/",
+      "BasePath": "_content/Entites",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/exampleJsInterop.js"
+    },
+    {
+      "Identity": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ServiceContracts/wwwroot/background.png",
+      "SourceId": "ServiceContracts",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ServiceContracts/wwwroot/",
+      "BasePath": "_content/ServiceContracts",
+      "RelativePath": "background.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/background.png"
+    },
+    {
+      "Identity": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ServiceContracts/wwwroot/exampleJsInterop.js",
+      "SourceId": "ServiceContracts",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ServiceContracts/wwwroot/",
+      "BasePath": "_content/ServiceContracts",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/exampleJsInterop.js"
+    }
+  ]
+}

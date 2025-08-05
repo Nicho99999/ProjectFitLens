@@ -1,0 +1,109 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ExerciseService.ForearmExercises
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<a asp-controller="Exercise" asp-action="Home" asp-area="User">
+    <div class ="button">
+        <span class="back arrow"></span>
+    
+    </div>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/ExerciseBoxes.css"/>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+
+<main>
+
+    <h1>Forearm Workouts</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Muscle</th>
+            <th>Equipment</th>
+            <th>Difficulty</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var exercise in Model.Exercises)
+        {
+            <tr>
+                <td style="font-size: x-large" data-label="Name">
+                    @exercise.Name.ToUpper()
+                </td>
+                <td data-label="Type">
+                    @exercise.Type.ToUpper()
+                </td>
+                <td data-label="Muscle">
+                    @exercise.Muscle.ToUpper()
+                </td>
+                <td data-label="Equipment">
+                    @exercise.Equipment.ToUpper()
+                </td>
+                <td data-label="Difficulty">
+                    <span style="color: @(exercise.Difficulty.ToLower() == "intermediate" ? "yellow" : exercise.Difficulty.ToLower() == "beginner" ? "green" : exercise.Difficulty.ToLower() == "expert" ? "red" : "inherit")">
+                        @exercise.Difficulty.ToUpper()
+                    </span>
+                <td data-label="Video">
+                    <a href="https://www.youtube.com/results?search_query=@Uri.EscapeDataString(exercise.Name + " exercise")" target="_blank">
+                        Watch Video
+                    </a>
+                </td>
+                
+
+            </tr>
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+       
+
+        </tbody>
+    </table>
+
+</main>
+
+</body>

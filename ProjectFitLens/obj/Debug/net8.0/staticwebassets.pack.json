@@ -1,0 +1,333 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/css/Body.css",
+      "PackagePath": "staticwebassets/css/Body.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/css/BodyPartSelector.css",
+      "PackagePath": "staticwebassets/css/BodyPartSelector.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/css/CalorieDashboard.css",
+      "PackagePath": "staticwebassets/css/CalorieDashboard.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/css/ExerciseBoxes.css",
+      "PackagePath": "staticwebassets/css/ExerciseBoxes.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/css/ExerciseHUB.css",
+      "PackagePath": "staticwebassets/css/ExerciseHUB.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/css/Glasses.css",
+      "PackagePath": "staticwebassets/css/Glasses.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/css/SignIn.css",
+      "PackagePath": "staticwebassets/css/SignIn.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/css/UserHome.css",
+      "PackagePath": "staticwebassets/css/UserHome.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/css/_Layout.css",
+      "PackagePath": "staticwebassets/css/_Layout.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/js/Calender.js",
+      "PackagePath": "staticwebassets/js/Calender.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/js/CreateAMeal.js",
+      "PackagePath": "staticwebassets/js/CreateAMeal.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/js/ProgressCircles.js",
+      "PackagePath": "staticwebassets/js/ProgressCircles.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/js/QuickAdd.js",
+      "PackagePath": "staticwebassets/js/QuickAdd.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/js/Search Bar.js",
+      "PackagePath": "staticwebassets/js/Search Bar.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/js/WaterIntake.js",
+      "PackagePath": "staticwebassets/js/WaterIntake.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/logos/apple-touch-icon.png",
+      "PackagePath": "staticwebassets/logos/apple-touch-icon.png"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/logos/verifiedlogo1.svg",
+      "PackagePath": "staticwebassets/logos/verifiedlogo1.svg"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/pictures/createameal.svg",
+      "PackagePath": "staticwebassets/pictures/createameal.svg"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/pictures/createameal1.svg",
+      "PackagePath": "staticwebassets/pictures/createameal1.svg"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/pictures/createameal3.svg",
+      "PackagePath": "staticwebassets/pictures/createameal3.svg"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/wwwroot/pictures/quickadd.svg",
+      "PackagePath": "staticwebassets/pictures/quickadd.svg"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.ProjectFitLens.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.ProjectFitLens.props",
+      "PackagePath": "build\\ProjectFitLens.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.ProjectFitLens.props",
+      "PackagePath": "buildMultiTargeting\\ProjectFitLens.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.ProjectFitLens.props",
+      "PackagePath": "buildTransitive\\ProjectFitLens.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

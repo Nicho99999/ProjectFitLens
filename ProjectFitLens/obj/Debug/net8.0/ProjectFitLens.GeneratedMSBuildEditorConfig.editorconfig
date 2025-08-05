@@ -1,0 +1,137 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ProjectFitLens
+build_property.RootNamespace = ProjectFitLens
+build_property.ProjectDir = /Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ProjectFitLens
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Calorie/CalorieDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9DYWxvcmllL0NhbG9yaWVEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Abs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9BYnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Adductors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9BZGR1Y3RvcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Biceps.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9CaWNlcHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/BodyPartSelector.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9Cb2R5UGFydFNlbGVjdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Calves.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9DYWx2ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Chest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9DaGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Deltoids.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9EZWx0b2lkcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Forearms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9Gb3JlYXJtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Glutes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9HbHV0ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Hamstrings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9IYW1zdHJpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/LowerBack.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9Mb3dlckJhY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Quads.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9RdWFkcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Trapezius.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9UcmFwZXppdXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Exercise/Triceps.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9FeGVyY2lzZS9UcmljZXBzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9TaGFyZWQvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/Shared/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9TaGFyZWQvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Areas/User/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvVXNlci9WaWV3cy9fVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Views/AthleteRegister/AthleteSurvey.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXRobGV0ZVJlZ2lzdGVyL0F0aGxldGVTdXJ2ZXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Views/Home/FitLensHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9GaXRMZW5zSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Views/RegisterLogin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVnaXN0ZXJMb2dpbi9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Views/RegisterLogin/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVnaXN0ZXJMb2dpbi9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C\# Projects/ProjectFitLens/ProjectFitLens/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

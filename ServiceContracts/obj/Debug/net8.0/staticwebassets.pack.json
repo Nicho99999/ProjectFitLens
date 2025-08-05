@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ServiceContracts/wwwroot/background.png",
+      "PackagePath": "staticwebassets/background.png"
+    },
+    {
+      "Id": "/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ServiceContracts/wwwroot/exampleJsInterop.js",
+      "PackagePath": "staticwebassets/exampleJsInterop.js"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.ServiceContracts.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.ServiceContracts.props",
+      "PackagePath": "build\\ServiceContracts.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.ServiceContracts.props",
+      "PackagePath": "buildMultiTargeting\\ServiceContracts.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.ServiceContracts.props",
+      "PackagePath": "buildTransitive\\ServiceContracts.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

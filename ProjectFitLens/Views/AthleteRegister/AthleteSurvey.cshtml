@@ -1,0 +1,475 @@
+@model ServiceContracts.DTO.AthleteAdd
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using ServiceContracts.Enums
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+
+@{
+ViewBag.Title = "Lets Get Fit";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Glasses.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/Body.css">
+    <link rel="stylesheet" type="text/css" href="~/css/SignIn.css">
+</head>
+
+
+
+<ul>
+    @if (ViewBag.Errors != null)
+    {
+    @foreach (var error in ViewBag.Errors)
+    {
+    <li>@error</li>
+    }
+
+    }
+
+</ul>
+
+
+
+
+<body>
+
+<div class="container" style="display: flex; justify-content: center; align-items: center; gap: 10px; overflow: visible; transform: translateY(20px)">
+<div class="loginbody">
+<div class="form-container">
+
+    <form asp-controller="AthleteRegister" asp-action="AthleteSurvey" method="post"
+          autocomplete='off' class='form'>
+        
+        <div class='control' style="display: flex; justify-content: center; width: 100%;">
+            <h1>
+               Let's Get Some More Information! 
+            </h1>
+        </div>
+
+
+        @* First Name *@
+
+        <div class='control block-cube block-input'>
+            <div>
+                <input asp-for="FirstName" placeholder="First Name">
+            </div>
+            <div>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+
+
+
+        @* Last Name *@
+
+        <div class='control block-cube block-input'>
+            <div>
+                <input asp-for="LastName" placeholder="Last Name">
+            </div>
+            <div>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+
+        @* Fitness Goal *@
+
+        <div class='control block-cube block-input'>
+            
+            <select asp-for="FitnessGoals">
+                <option value="">Select Fitness Goal</option>
+                @foreach (var goal in Enum.GetValues(typeof(GoalEnums)).Cast<GoalEnums>())
+
+                {
+                    <option value="@goal">@goal</option>
+                }
+
+
+            </select>
+            <div>
+                <span asp-validation-for="FitnessGoals" class="text-danger"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+
+
+        @* Activity Levels *@
+        
+        <div class='control block-cube block-input'>
+            <select asp-for="ActivityLevel">
+                <option value="">Select Activity Level</option>
+                @foreach (var activity in Enum.GetValues(typeof(ActivityLevels)).Cast<ActivityLevels>())
+                {
+                    <option value="@activity">@activity</option>
+                }
+            </select>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        
+        
+        
+        @* Gender *@
+        
+        <div class='control block-cube block-input'>
+            <select asp-for="Gender">
+                <option value="">Select Gender</option>
+                @foreach (var gender in Enum.GetValues(typeof(GenderEnum)).Cast<GenderEnum>())
+                {
+                    <option value="@gender">@gender</option>
+                }
+
+
+            </select>
+            <div>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+        
+        
+        
+        
+
+
+        @* Date of Birth *@
+        
+        <div class='control block-cube block-input'>
+            <div>
+                <input type="date" asp-for="DateOfBirth" placeholder="Date of Birth">
+            </div>
+            <div>
+                <span asp-validation-for="DateOfBirth" class="validation-error"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+
+
+
+
+        @* Zipcode *@
+
+        <div class='control block-cube block-input'>
+            <div>
+                <input asp-for="Zipcode" placeholder="Zipcode">
+            </div>
+            <div>
+                <span asp-validation-for="Zipcode" class="validation-error"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+
+
+        @* Street Address *@
+
+        <div class='control block-cube block-input'>
+            <div>
+                <input asp-for="StreetAddress" placeholder="Street Address">
+            </div>
+            <div>
+                <span asp-validation-for="StreetAddress" class="validation-error"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+
+
+        @* City *@
+
+        <div class='control block-cube block-input'>
+            <div>
+                <input asp-for="City" placeholder="City">
+            </div>
+            <div>
+                <span asp-validation-for="City" class="validation-error"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        @* Country *@
+
+        <div class='control block-cube block-input'>
+            <div>
+                <input asp-for="Country" placeholder="Country">
+            </div>
+            <div>
+                <span asp-validation-for="Country" class="validation-error"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+
+        
+
+
+        @* Height Feet *@
+
+        <div class='control block-cube block-input'>
+            <div>
+                <input asp-for="HeightFeet" placeholder="Height Feet">
+            </div>
+            <div>
+                <span asp-validation-for="HeightFeet" class="validation-error"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+
+        @* Height Inches *@
+
+        <div class='control block-cube block-input'>
+            <div>
+                <input asp-for="HeightInches" placeholder="Height Inches">
+            </div>
+            <div>
+                <span asp-validation-for="HeightInches" class="validation-error"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+        
+
+        @* Weight *@
+
+        <div class='control block-cube block-input'>
+            <div>
+                <input asp-for="Weight" placeholder="Weight">
+            </div>
+            <div>
+                <span asp-validation-for="Weight" class="validation-error"></span>
+            </div>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div asp-validation-summary="All" class="validation-error"></div>
+        <button class='btn block-cube block-cube-hover' type="submit">
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='text'>
+                Let's Get Fit
+            </div>
+        </button>
+
+
+    </form>
+
+</div>
+</div>
+</div>
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js" integrity="sha512-KFHXdr2oObHKI9w4Hv1XPKc898mE4kgYx58oqsc/JqqdLMDI4YjOLzom+EMlW8HFUd0QfjfAvxSL6sEq/a42fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+

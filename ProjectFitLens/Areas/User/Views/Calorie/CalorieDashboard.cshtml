@@ -1,0 +1,1619 @@
+@model ServiceContracts.DTO.AthleteAndNutritionResponse;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a asp-controller="Exercise" asp-action="Home" asp-area="User">
+    <div class="button">
+        <span class="back arrow"></span>
+
+    </div>
+</a>
+
+
+
+<div class="date-container">
+    <span class="date">Today</span>
+    <div class="dropdown-calendar hidden">
+        <div class="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <span id="current-month-year"></span>
+            <button id="next-month">&gt;</button>
+        </div>
+        <table class="calendar">
+            <thead>
+            <tr style="color: #ff7e7e">
+                <th>Su</th>
+                <th>Mo</th>
+                <th>Tu</th>
+                <th>We</th>
+                <th>Th</th>
+                <th>Fr</th>
+                <th>Sa</th>
+            </tr>
+            </thead>
+            <tbody id="calendar-body" >
+            <!-- JavaScript will populate the calendar here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+    <title>CalorieHUB</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link href="~/css/CalorieDashboard.css" rel="stylesheet" type="text/css">
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+
+<div class="card-container">
+
+    <div class="card">
+
+        <span class= "cardtitlemain">Calories</span>
+        <div class="circle-big">
+            <svg class="progress-circle" overflow="visible" data-circle="calories" width="120" height="120">
+
+
+                <defs>
+                    <filter id="calorieglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                        <!-- Gaussian blur to create the glow -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                        <!-- Merge to overlay the glow with the original shape -->
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+
+                <circle class="bg" cx="60" cy="60" r="52"></circle>
+                <circle class="progress" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="text">
+                <span id="remainingCaloriesDisplay">@Model.Nutritional.Calories</span><br />
+                <span class="remaining">Remaining</span>
+            </div>
+        </div>
+        <div>
+      
+
+     <span class="material-symbols-outlined energy">
+  <span class="number">123</span>
+  local_fire_department
+</span>
+
+            <span class="goal1-container">
+  <span class="goalnumber" id="calorieGoal">@Model.Nutritional.Calories</span> <!-- Number on top of the goal icon -->
+  <span class="material-symbols-outlined goal1">emoji_events</span>
+</span>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card2">
+
+    <div class="card-title2">Macros</div>
+    
+    <div class="cup-title2">
+        <div class="cup">
+            <span class="cup-number" id="water-level">0</span>
+
+        </div>
+    </div>
+    
+    <div class="buttons">
+        <button type="button" class="btn btn-outline-primary btn-sm" id="decButton" >-</button>
+        <button type="button" class="btn btn-outline-primary btn-sm" id="addButton" >+</button>
+    </div>
+
+    <div id="toast" class="toast">Good job! You've hit your water intake goal!
+    
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- Cholesterol Display -->
+        <div class="cholestrol-title">
+            <span class="main-cholestrol-title">Cholesterol</span>
+
+            <!-- SVG with Glow Filter -->
+                <defs>
+                    <filter id="cholesterolglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                        <!-- Gaussian blur to create the glow -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+                        <!-- Merge to overlay the glow with the original shape -->
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+            <!-- Cholesterol Icon -->
+            <span
+                id="cholesterol-icon"
+                class="material-symbols-outlined "
+                style="font-size: 30px;">
+                heart_check
+            </span>
+            
+        </div>
+
+        <!-- Cholesterol Value Display -->
+        <div class="cholestrol-title-number">
+            <span id="totalCholesterolDisplay"></span>
+            <tspan hidden="" id="cholesterolGoal" style="display: none;">@Model.Nutritional.TotalCholestrol</tspan>
+
+        </div>
+
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    
+    
+    <div class="circle-container">
+
+        <!-- Circle 1 -->
+        <div class="circle-big2">
+            <div class="circle-title">Protein</div> <!-- Title -->
+            <svg viewBox="0 0 120 120" data-circle="protein" overflow="visible">
+
+                <defs>
+                    <filter id="protienglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                        <!-- Gaussian blur to create the glow -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                        <!-- Merge to overlay the glow with the original shape -->
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+                <circle class="bg" cx="60" cy="60" r="52"/>
+                <circle class="progress" cx="60" cy="60" r="52"/>
+                <text class="text" x="50%" y="50%" dy=".3em">
+                    <tspan x="68%" dy="-0.2em" class="main-text" id="remainingProteinDisplay">@Model.Nutritional.Protein g</tspan>
+                    <!-- First line -->
+                    <tspan x="65%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                    <tspan hidden="" id="protienGoal" style="display: none;">@Model.Nutritional.Protein</tspan>
+
+                </text>
+            </svg>
+        </div>
+
+        
+        
+        <!-- Circle 2 -->
+        <div class="circle-big2">
+            <div class="circle-title">Carbs</div> <!-- Title -->
+            <svg viewBox="0 0 120 120" data-circle="carbs" overflow="visible">
+
+                <defs>
+                    <filter id="carbsglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                        <!-- Gaussian blur to create the glow -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                        <!-- Merge to overlay the glow with the original shape -->
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+                
+                
+                
+                
+                
+                
+                
+                <circle class="bg" cx="60" cy="60" r="52"/>
+                <circle class="progress" cx="60" cy="60" r="52"/>
+                <text class="text" x="50%" y="50%" dy=".3em">
+                    <tspan x="68%" dy="-0.2em" class="main-text" id="remainingCarbsDisplay">@Model.Nutritional.Carbs g</tspan>
+                    <!-- First line -->
+                    <tspan x="65%" dy="1.5em" class="remaining-text">Remaining</tspan>
+                    <tspan hidden="" id="carbsGoal" style="display: none;">@Model.Nutritional.Carbs</tspan>
+
+                </text>
+            </svg>
+        </div>
+
+        
+        
+        
+        <!-- Circle 3 -->
+        <div class="circle-big2">
+            <div class="circle-title">Fats</div> <!-- Title -->
+            <svg viewBox="0 0 120 120" data-circle="totalfats" overflow="visible">
+
+
+                <defs>
+                    <filter id="totalfatsglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                        <!-- Gaussian blur to create the glow -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                        <!-- Merge to overlay the glow with the original shape -->
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+
+
+
+
+
+
+
+
+
+                <circle class="bg" cx="60" cy="60" r="52"/>
+                <circle class="progress" cx="60" cy="60" r="52"/>
+                <text class="text" x="50%" y="50%" dy=".3em">
+                    <tspan x="68%" dy="-0.2em" class="main-text" id="remainingFatsDisplay">@Model.Nutritional.TotalFat g</tspan>
+                    <!-- First line -->
+                    <tspan hidden="" id="totalfatGoal" style="display: none;">@Model.Nutritional.TotalFat</tspan>
+                    <tspan x="65%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                </text>
+            </svg>
+        </div>
+
+        <!-- Circle 4 -->
+        <div class="circle-big2">
+            <div class="circle-title">Fiber</div> <!-- Title -->
+            <svg viewBox="0 0 120 120" data-circle="fiber" overflow="visible">
+
+
+
+                <defs>
+                    <filter id="fiberglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                        <!-- Gaussian blur to create the glow -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                        <!-- Merge to overlay the glow with the original shape -->
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+                
+                
+                
+                <circle class="bg" cx="60" cy="60" r="52"/>
+                <circle class="progress" cx="60" cy="60" r="52"/>
+                <text class="text" x="50%" y="50%" dy=".3em">
+                    <tspan x="68%" dy="-0.2em" class="main-text" id="remainingFiberDisplay">@Model.Nutritional.Fiber g</tspan> <!-- First line -->
+                    <tspan hidden="" id="fiberGoal" style="display: none;">@Model.Nutritional.Fiber</tspan>
+
+                    <tspan x="65%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                </text>
+            </svg>
+        </div>
+
+        
+        
+        
+        <!-- Circle 5 -->
+        <div class="circle-big2">
+            <div class="circle-title">Sugar</div> <!-- Title -->
+            <svg viewBox="0 0 120 120" data-circle="sugar" overflow="visible">
+
+
+                <defs>
+                    <filter id="sugarglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                        <!-- Gaussian blur to create the glow -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                        <!-- Merge to overlay the glow with the original shape -->
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+                
+                
+                
+                <circle class="bg" cx="60" cy="60" r="52"/>
+                <circle class="progress" cx="60" cy="60" r="52"/>
+                <text class="text" x="50%" y="50%" dy=".3em">
+                    <tspan x="68%" dy="-0.2em" class="main-text" id="remainingSugarDisplay">@Model.Nutritional.Sugar g</tspan> <!-- First line -->
+                    <tspan hidden="" id="sugarGoal" style="display: none;">@Model.Nutritional.Sugar</tspan>
+
+                    <tspan x="65%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                </text>
+            </svg>
+        </div>
+
+        
+        
+        <!-- Circle 6 -->
+        <div class="circle-big2">
+            <div class="circle-title">Sodium</div> <!-- Title -->
+            <svg viewBox="0 0 120 120" data-circle="sodium" overflow="visible">
+
+
+                <defs>
+                    <filter id="sodiumglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                        <!-- Gaussian blur to create the glow -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                        <!-- Merge to overlay the glow with the original shape -->
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <circle class="bg" cx="60" cy="60" r="52"/>
+                <circle class="progress" cx="60" cy="60" r="52"/>
+                <text class="text" x="50%" y="50%" dy=".3em">
+                    <tspan x="68%" dy="-0.2em" class="main-text" id="remainingSodiumDisplay">@Model.Nutritional.Sodium mg</tspan>
+                    <tspan x="65%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                    <tspan hidden="" id="sodiumGoal" style="display: none;">@Model.Nutritional.Sodium</tspan>
+
+                </text>
+            </svg>
+        </div>
+    </div>
+
+
+
+
+
+
+
+                             <!-- Micronutrients-->
+
+
+    <div class="small-circle-container2">
+            <!-- Smaller Circles -->
+            
+
+            <div class="small-circle">
+                <div class="circle-title2" >Thiamin</div>
+                <svg viewBox="0 0 120 120" data-circle="Thiamin" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingThiaminDisplay"></tspan>
+
+
+                    </text>
+                </svg>
+
+
+            </div>
+
+
+
+            
+            <div class="small-circle">
+                <div class="circle-title2">Vitamin C</div>
+
+                <svg viewBox="0 0 120 120" data-circle="VitaminC" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingVitaminCDisplay"></tspan>
+                        <tspan hidden="" id="vitaminCGoal" style="display: none;">@Model.Nutritional.VitaminC</tspan>
+
+                    </text>
+                </svg>
+            </div>
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Vitamin D</div>
+
+                <svg viewBox="0 0 120 120" data-circle="VitaminD" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingVitaminDDisplay"></tspan>
+                        <tspan hidden="" id="vitaminDGoal" style="display: none;">@Model.Nutritional.VitaminD</tspan>
+
+                    </text>
+                </svg>
+            </div>
+
+
+
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Niacin</div>
+
+                <svg viewBox="0 0 120 120" data-circle="Niacin" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingNiacinDisplay"></tspan>
+
+                    </text>
+                </svg>
+            </div>
+
+
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Riboflavin</div>
+
+                <svg viewBox="0 0 120 120" data-circle="Riboflavin" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingRiboflavinDisplay"></tspan>
+
+                    </text>
+                </svg>
+            </div>
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Calcium</div>
+
+                <svg viewBox="0 0 120 120" data-circle="Calcium" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingCalciumDisplay"></tspan>
+                        <tspan hidden="" id="calciumGoal" style="display: none;">@Model.Nutritional.Calcium</tspan>
+
+                    </text>
+                </svg>
+            </div>
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Iron</div>
+
+                <svg viewBox="0 0 120 120" data-circle="Iron" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingIronDisplay"></tspan>
+                        <tspan hidden="" id="ironGoal" style="display: none;">@Model.Nutritional.Iron</tspan>
+
+                    </text>
+                </svg>
+            </div>
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Magnesium</div>
+
+                <svg viewBox="0 0 120 120" data-circle="Magnesium" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingMagnesiumDisplay"></tspan>
+                        <tspan hidden="" id="magnesiumGoal" style="display: none;">@Model.Nutritional.Magnesium</tspan>
+
+                    </text>
+                </svg>
+            </div>
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Potassium</div>
+
+                <svg viewBox="0 0 120 120" data-circle="Potassium" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingPotassiumDisplay"></tspan>
+                        <tspan hidden="" id="potassiumGoal" style="display: none;">@Model.Nutritional.Potassium</tspan>
+
+                    </text>
+                </svg>
+            </div>
+
+            <div class="small-circle">
+                <div class="circle-title2">Zinc</div>
+
+                <svg viewBox="0 0 120 120" data-circle="Zinc" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingZincDisplay"></tspan>
+                        <tspan hidden="" id="zincGoal" style="display: none;">@Model.Nutritional.Zinc</tspan>
+
+                    </text>
+                </svg>
+            </div>
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Folate</div>
+
+                <svg viewBox="0 0 120 120" data-circle="Folate" overflow="visible">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em" id="remainingFolateDisplay"></tspan>
+
+                    </text>
+                </svg>
+            </div>
+            
+            </div>
+    
+
+
+    
+
+        </div> 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="center-wrapper10">
+    <!-- Horizontal Scrollable Container for Cards -->
+    <div class="card10" >
+        <!-- Card 1 -->
+        <div class="card10-item">
+            <div class="dashboard">
+                <!-- Graph -->
+                <canvas id="caloriesTimeGraph" ></canvas>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card-container99">
+    <div class="card99">
+        <div class="headings-container">
+            <h5 class="add-food-heading" onclick="toggleFoodForm()">Order Food</h5>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="nutritionModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2 class="main-info">Enter Nutritional Information</h2>
+        <form id="nutritionForm">
+            <label hidden="" style="display: none" for="time">*Time:</label>
+            <input hidden="" style="display: none" class="maininfoinput" type="text" id="time" name="time" placeholder="Generic">
+            <br>
+            <label for="brand">*Brand / Restaurant:</label>
+            <input class="maininfoinput" type="text" id="brand" name="brand" placeholder="Generic">
+            <br>
+            <label for="description">*Food Description:</label>
+            <input class="maininfoinput" type="text" id="description" name="description" placeholder="Crackers">
+
+
+            <hr>
+
+            <h3 class="main-info">Serving Information</h3>
+
+            <div class="serving-info">
+
+                <label for="servingSize">Serving Size:</label>
+                <input type="number" id="servingSize" name="servingSize" placeholder="e.g., 1" class="serving-input">
+
+                <label for="unit">Unit:</label>
+                <input type="text" id="unit" name="unit" placeholder="e.g., oz" class="serving-input">
+
+                <label for="servingsPerContainer">Servings Per Container:</label>
+                <input type="number" id="servingsPerContainer" name="servingsPerContainer" placeholder="e.g., 10" class="serving-input">
+
+            </div>
+
+
+            <hr>
+
+
+
+
+
+
+            <h3 class="main-info">Nutritional Facts</h3>
+
+            <div class="main-nutrients">
+
+                <!-- Main Nutritional Information -->
+                <label for="calories">Calories:</label>
+                <input type="number" id="calories" name="calories" class="large-input">
+
+                <label for="protein">Protein (g):</label>
+                <input type="number" id="protein" name="protein" class="large-input">
+
+                <label for="sodium">Sodium (mg):</label>
+                <input type="number" id="sodium" name="sodium" class="large-input">
+
+                <label for="sugar">Sugar (g):</label>
+                <input type="number" id="sugar" name="sugar" class="large-input">
+
+                <label for="totalFat">Total Fat (g):</label>
+                <input type="number" id="totalFat" name="totalFat" class="large-input">
+
+                <label for="carbs">Total Carbs (g):</label>
+                <input type="number" id="carbs" name="carbs" class="large-input">
+
+                <label for="fiber">Dietary Fiber (g):</label>
+                <input type="number" id="fiber" name="fiber" class="large-input">
+
+                <label for="cholesterol">Cholesterol (mg):</label>
+                <input type="number" id="cholesterol" name="cholesterol" class="large-input">
+
+            </div>
+
+            <hr>
+
+            <!-- Additional Nutritional Information -->
+            <h3 class="main-info">Additional Nutrients</h3>
+
+            <div class="additional-nutrients">
+                <label for="niacin">Niacin (mg):</label>
+                <input type="number" id="niacin" name="niacin" class="small-input">
+
+                <label for="vitaminC">Vitamin C (mcg):</label>
+                <input type="number" id="vitaminC" name="vitaminC" class="small-input">
+
+                <label for="folate">Folate (mcg):</label>
+                <input type="number" id="folate" name="folate" class="small-input">
+
+                <label for="calcium">Calcium (mg):</label>
+                <input type="number" id="calcium" name="calcium" class="small-input">
+
+                <label for="iron">Iron (mg):</label>
+                <input type="number" id="iron" name="iron" class="small-input">
+
+                <label for="magnesium">Magnesium (mg):</label>
+                <input type="number" id="magnesium" name="magnesium" class="small-input">
+
+                <label for="zinc">Zinc (mg):</label>
+                <input type="number" id="zinc" name="zinc" class="small-input">
+
+                <label for="vitaminD">Vitamin D (mcg):</label>
+                <input type="number" id="vitaminD" name="vitaminD" class="small-input">
+
+                <label for="riboflavin">Riboflavin (mg):</label>
+                <input type="number" id="riboflavin" name="riboflavin" class="small-input">
+
+                <label for="potassium">Potassium (mg):</label>
+                <input type="number" id="potassium" name="potassium" class="small-input">
+
+                <label for="thiamin">Thiamin (mg):</label>
+                <input type="number" id="thiamin" name="thiamin" class="small-input">
+            </div>
+
+            <div class="form-actions">
+                <!-- Quantity input to the left of the Save button -->
+                <label for="quantity" class="label-name">Quantity:</label>
+                <input type="number" id="quantity" name="quantity">
+                <button type="submit" id="saveButton">Add</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container8">
+    <div class="card3">
+
+        <span class="material-symbols-outlined card-icon3">menu_book</span>
+        <h1 class="card3label">Food Log</h1>
+        <div class="add-food-container">
+        </div>
+
+
+
+
+        <div class="options-container">
+            <!-- Floating Options Button -->
+            <div class="options">
+                <div class="material-symbols-outlined logo">
+                    lunch_dining
+                           
+                </div> <!-- Three-bar menu icon -->
+            </div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Menu Items -->
+            <div class="menu" style="">
+                <div class="menu-item quickadd" onclick="openQuickAddModal()">
+                    <div>
+                        <img src="/pictures/quickadd.svg" alt="quick add" style="font-size: 30px; height: auto;">
+                    </div>
+                    
+                </div>
+                
+                <div class="menu-item createmeal" onclick="openCreateMealModal()">
+                    <div>
+                        <img src="/pictures/createameal3.svg" alt="create a meal" style="font-size: 30px; height: auto;">
+                    </div>
+                    
+                </div>
+                    
+                <div class="menu-item addfood" onclick="showQuickAddForm()">
+                    <span style="color: white; font-size: 34px" class="material-symbols-outlined">add</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="createMealModal" class="modal1">
+            <div class="modal-content1">
+                <span id="closeModal1" class="close">&times;</span>
+                <h2>Create a Meal</h2>
+                <input  type="text" id="mealName" placeholder="Enter meal name">
+
+                <div class="split-container">
+                    <!-- Left Side - Quick Add API Search -->
+                    <div class="left-panel">
+                        <input type="text" id="mealSearch" placeholder="Search ingredients...">
+                        <div id="searchResults1" class="search-results1"></div>
+                    </div>
+
+
+                    <div id="savedMealsContainer">
+                        <h3 style="text-align: center">Saved Meals</h3>
+                        <div id="savedMealsList"></div>
+                    </div>
+                    
+                    <!-- Right Side - Meal Builder -->
+                    <div class="right-panel">
+                        <h3 style="text-align: center">Your Meal</h3>
+                        <div id="mealContainer" class="meal-container"></div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button id="saveMeal">Save Meal</button>
+                </div>            
+            
+                </div>
+        </div>
+        
+        
+        
+        
+
+        <!-- Quick Add Modal -->
+        <div id="quickAddModal" class="quickmodal">
+            <div class="quickaddmodal-content">
+                <span class="close-button" onclick="closeQuickAddModal()">&times;</span>
+                
+                <h2> <span style="color: black; font-size: 50px" class="material-symbols-outlined">fork_spoon</span></h2>
+
+                <input
+                    type="text"
+                    id="quickAddSearchBar"
+                    class="quick-add-search-bar"
+                    placeholder="Search Food Database..."
+                    oninput="searchQuickAddResults()"
+                />
+                <div id="quickAddResultsContainer" class="quick-add-results-container">
+                    <!-- Results will be dynamically populated here -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Nutrition Facts Modal -->
+        <div id="nutritionFactsModal" class="nutrition-modal" style="display: none;">
+            <div class="nutrition-modal-content">
+                <span class="nutrition-close">&times;</span>
+                <ul id="mealItemList"></ul> <!-- Container for listing meal items -->
+
+                
+                
+                
+                <!-- Progress Circle  -->
+                
+                <div class="nutrition-small-circle-container">
+
+                    <div class="nutrition-small-circle" id="proteincircle">
+                        <div class="nutriton-circle-title">Protein</div>
+                        <svg viewBox="0 0 120 120" data-circle="NutritionProtein" overflow="visible">
+
+
+
+                            <defs>
+                                <filter id="nutritionproteinnglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                                    <!-- Gaussian blur to create the glow -->
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                                    <!-- Merge to overlay the glow with the original shape -->
+                                    <feMerge>
+                                        <feMergeNode in="blur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <circle class="nutrition-bg" cx="50" cy="50" r="40" fill="none" stroke="#eee" stroke-width="8"/>
+                            <circle class="nutrition-progress" id="proteinprogress" cx="50" cy="50" r="40" fill="none" stroke="#4caf50" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="251"/>
+                            <text class="text3" id="proteinDisplayText" x="50" y="55" text-anchor="middle" alignment-baseline="middle" font-size="15">
+                                <tspan dy="-0.2em" id="nutritionProteinDisplay"></tspan>
+                            </text>
+                        </svg>
+                    </div>
+
+
+
+
+                    <div class="nutrition-small-circle">
+                        <div class="nutriton-circle-title">Carbs</div>
+                        <svg viewBox="0 0 120 120" data-circle="NutritionCarbs" overflow="visible">
+
+
+
+                            <defs>
+                                <filter id="nutritioncarbsglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                                    <!-- Gaussian blur to create the glow -->
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                                    <!-- Merge to overlay the glow with the original shape -->
+                                    <feMerge>
+                                        <feMergeNode in="blur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <circle class="nutrition-bg" cx="50" cy="50" r="40" fill="none" stroke="#eee" stroke-width="8"/>
+                            <circle class="nutrition-progress" id="carbsprogress" cx="50" cy="50" r="40" fill="none" stroke="#4caf50" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="251"/>
+                            <text class="text3" x="50" y="55" text-anchor="middle" alignment-baseline="middle" font-size="15">
+                                <tspan dy="-0.2em" id="nutritionCarbsDisplay"></tspan>
+                            </text>
+                        </svg>
+                    </div>
+                    
+                </div>
+
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                <div class="nutrition-small-circle-container3"> 
+                    
+
+                    <div class="nutrition-small-circle">
+                        <div class="nutriton-circle-title3">Fats</div>
+                        <svg viewBox="0 0 120 120" data-circle="NutritionFats" overflow="visible">
+
+
+
+                            <defs>
+                                <filter id="nutritionfatsglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                                    <!-- Gaussian blur to create the glow -->
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                                    <!-- Merge to overlay the glow with the original shape -->
+                                    <feMerge>
+                                        <feMergeNode in="blur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <circle class="nutrition-bg" cx="50" cy="50" r="40" fill="none" stroke="#eee" stroke-width="8"/>
+                            <circle class="nutrition-progress" id="fatsprogress" cx="50" cy="50" r="40" fill="none" stroke="#4caf50" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="251"/>
+                            <text class="text3" x="50" y="55" text-anchor="middle" alignment-baseline="middle" font-size="15">
+                                <tspan dy="-0.2em" id="nutritionFatsDisplay"></tspan>
+                            </text>
+                        </svg>
+                    </div>
+
+
+
+                    <div class="nutrition-small-circle">
+                        <div class="nutriton-circle-title3">Fiber</div>
+                        <svg viewBox="0 0 120 120" data-circle="NutritionFiber" overflow="visible">
+
+
+
+                            <defs>
+                                <filter id="nutritionfiberglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                                    <!-- Gaussian blur to create the glow -->
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                                    <!-- Merge to overlay the glow with the original shape -->
+                                    <feMerge>
+                                        <feMergeNode in="blur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <circle class="nutrition-bg" cx="50" cy="50" r="40" fill="none" stroke="#eee" stroke-width="8"/>
+                            <circle class="nutrition-progress" id="fiberprogress" cx="50" cy="50" r="40" fill="none" stroke="#4caf50" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="251"/>
+                            <text class="text3" x="50" y="55" text-anchor="middle" alignment-baseline="middle" font-size="15">
+                                <tspan dy="-0.2em" id="nutritionFiberDisplay"></tspan>
+                            </text>
+                        </svg>
+                    </div>
+                    
+                    </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="nutrition-small-circle-container2">
+
+
+                    <div class="nutrition-small-circle">
+                        <div class="nutriton-circle-title2">Sugar</div>
+                        <svg viewBox="0 0 120 120" data-circle="NutritionSugar" overflow="visible">
+
+
+
+                            <defs>
+                                <filter id="nutritionsugarglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                                    <!-- Gaussian blur to create the glow -->
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                                    <!-- Merge to overlay the glow with the original shape -->
+                                    <feMerge>
+                                        <feMergeNode in="blur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <circle class="nutrition-bg" cx="50" cy="50" r="40" fill="none" stroke="#eee" stroke-width="8"/>
+                            <circle class="nutrition-progress" id="sugarprogress" cx="50" cy="50" r="40" fill="none" stroke="#4caf50" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="251"/>
+                            <text class="text3" x="50" y="55" text-anchor="middle" alignment-baseline="middle" font-size="15">
+                                <tspan dy="-0.2em" id="nutritionSugarDisplay"></tspan>
+                            </text>
+                        </svg>
+                    </div>
+
+
+                    <div class="nutrition-small-circle">
+                        <div class="nutriton-circle-title2">Sodium</div>
+                        <svg viewBox="0 0 120 120" data-circle="NutritionSodium" overflow="visible">
+
+
+
+                            <defs>
+                                <filter id="nutritionsodiumglow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="250" height="250">
+                                    <!-- Gaussian blur to create the glow -->
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/> <!-- Increase stdDeviation for softer glow -->
+                                    <!-- Merge to overlay the glow with the original shape -->
+                                    <feMerge>
+                                        <feMergeNode in="blur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <circle class="nutrition-bg" cx="50" cy="50" r="40" fill="none" stroke="#eee" stroke-width="8"/>
+                            <circle class="nutrition-progress" id="sodiumprogress" cx="50" cy="50" r="40" fill="none" stroke="#4caf50" stroke-width="8" stroke-dasharray="251" stroke-dashoffset="251"/>
+                            <text class="text3" x="50" y="55" text-anchor="middle" alignment-baseline="middle" font-size="15">
+                                <tspan dy="-0.2em" id="nutritionSodiumDisplay"></tspan>
+                            </text>
+                        </svg>
+                    </div>
+                    
+                </div>
+
+                
+                <div id="savedMealsContainerProtein">
+                    <div id="savedMealsListProtein">
+                    
+                        </div>
+                    
+                </div>
+
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="card4">
+            <div class="table-responsive-vertical shadow-z-1">
+                <table class="custom-table">
+                    <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Description</th>
+                        <th>Calories</th>
+                        <th>Protein</th>
+                        <th>Fats</th>
+                        <th>Carbs</th>
+                        <th>Fiber</th>
+                        <th>Sugar</th>
+                        <th>Sodium</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody id="foodLogTableBody">
+
+
+
+
+                    <!-- Dynamic rows will be added here -->
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="~/js/QuickAdd.js"></script>
+<script src="~/js/Calender.js"></script>
+<script src="~/js/ProgressCircles.js"></script>
+<script src="~/js/WaterIntake.js"></script>
+<script src="~/js/Search Bar.js"></script>
+<script src="~/js/CreateAMeal.js"></script>
+<script src="~/js/CreateAMealProgressCircles.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

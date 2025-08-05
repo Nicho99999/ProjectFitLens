@@ -1,0 +1,3467 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,400,300");
+
+
+
+.date-container {
+    position: relative; /* Necessary for the dropdown to position absolutely */
+    text-align: right; /* Align the date on the far right */
+    margin-right: 5px; /* Optional: Space from the right edge of the container */
+    top: 13px; /* Adjust vertical position if needed */
+    font-family: Helvetica, sans-serif;
+
+}
+
+.date {
+    color: white; /* Date text color */
+    font-size: 20px; /* Adjust font size for better visibility */
+    cursor: pointer; /* Indicate clickable behavior */
+    font-weight: 600;
+
+    display: inline-block; /* Ensures inline alignment for the date */
+    font-family: Helvetica, sans-serif;
+
+}
+
+.dropdown-calendar {
+    position: absolute; /* Position dropdown relative to .date-container */
+    top: 30px; /* Space between the date and dropdown */
+    right: 0; /* Align dropdown with the right side of the container */
+    background-color:  #292929; /* Dropdown background */
+    border: 2px solid rgba(7, 7, 7, 0.12);
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 10px; /* Inner spacing for dropdown content */
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+    width: 200px; /* Dropdown width */
+    display: flex ;
+
+}
+
+
+td.completed {
+    background-color: transparent; /* Ensure the background remains clear */
+    position: relative; /* Allow absolute positioning for the checkmark */
+}
+
+td.completed span {
+    font-size: 26px;
+    color: #2e8b57; /* Color of the checkmark */
+    position: absolute;
+    top: -3px; /* Position the checkmark above the number */
+    left: 53%;
+    transform: translateX(-50%); /* Center the checkmark horizontally */
+    z-index: 10; /* Ensure the checkmark is on top of the number */
+}
+
+/* Highlight today's date */
+td.today {
+    font-weight: bold;
+}
+
+
+
+.hidden {
+    display: none; /* Hide dropdown when not active */
+}
+.calendar-header button {
+    background-color: #ff7e7e; /* Green color for buttons */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30px;
+    justify-content: center;
+}
+
+.calendar-header button:hover {
+    background-color: #ff7e7e; /* Darker green on hover */
+}
+
+.calendar-header button:active {
+    background-color: #ff7e7e; /* Even darker green when clicked */
+}
+.calendar td {
+    cursor: pointer;
+    color: white; /* Blue color for the dates */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.calendar td:hover {
+    background-color: white; /* Light blue background on hover */
+    color: grey; /* Darker blue for hover text */
+    border-radius: 4px; /* Add rounded corners */
+}
+
+
+.calendar td:active {
+    background-color: #e6f7ff; /* Even lighter blue for active clicks */
+    color: #ff7e7e; /* Even darker blue for active text */
+}
+
+#current-month-year {
+    font-size: 17px;
+    font-weight: bold;
+    color: white; /* Blue color for the month and year */
+
+}
+.today {
+    background-color: #ff7e7e; /* Light yellow background for today's date */
+    color: #856404; /* Darker text color */
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.today:hover {
+    background-color: #ffdd99; 
+    color: #654321; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.welcome-text {
+    font-size: 15px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    position: absolute; /* Positioned relative to the nearest positioned ancestor */
+    top: 90px; /* Adjust this value to move it down */
+
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct centering */
+    margin: 0; /* Remove unnecessary margin */
+    text-align: center; /* Ensure text is aligned properly */
+}
+
+.home {
+    font-size: 37px !important;
+    margin-bottom: 10px; /* Space between the icon and card4 */
+    color: white;
+    justify-content: flex-start !important;
+    position: absolute; /* Or `fixed` to keep it in view even when scrolling */
+    left: 10px; /* Adjust to desired distance from the left edge */
+    top: 20px;
+    cursor: pointer !important;
+}
+
+.signout {
+    font-size: 30px !important;
+
+    color: #ff7e7e;
+    justify-content: flex-start !important;
+    margin-left: 55px !important; /* No margin on the left to keep it aligned left */
+    position: absolute; /* Or `fixed` to keep it in view even when scrolling */
+    left: 6px; /* Adjust to desired distance from the left edge */
+    top: 26px;
+    cursor: pointer;
+}
+
+
+body {
+    background-color: #1d1d1d;
+    font-family: "Arial", sans-serif !important;
+}
+
+.headline {
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 22px;
+}
+
+.headline .small {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+
+
+
+
+.cardtitlemain {
+    font-family: Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+    margin: 0; /* Remove unnecessary margin */
+    position: absolute; /* Position it absolutely inside the card */
+    left: 10px; /* Move the title to the left */
+    top: 10px; /* Add some space from the top */
+    text-align: left; /* Align text to the left */
+    font-weight: bold;
+
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 220px; /* Slightly larger height to fit both elements */
+    background-color: #292929;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+    border: 2px solid rgba(7, 7, 7, 0.12);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center contents horizontally */
+    justify-content: center; /* Center contents vertically */
+    box-sizing: border-box;
+}
+
+.circle-big {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px ; /* Add margin around the circle */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Make sure the container is circular */
+    overflow: visible !important; /* Allow the glow to extend beyond the container */
+
+}
+
+
+.progress-circle {
+    position: absolute;
+}
+
+circle {
+    fill: none;
+    stroke-width: 8; /* Adjust stroke width to your liking (thicker or thinner) */
+}
+
+circle.bg {
+    stroke: #1b2a33; /* Dark background color for the circle */
+}
+
+
+circle.progress {
+    stroke: #ff7e7e; /* Progress color */
+    stroke-linecap: round; /* Rounded end of the stroke */
+    transform: rotate(-90deg); /* Rotate so it starts at the top center */
+    transform-origin: 50% 50%;
+    stroke-dasharray: 0; /* Initialize to match circumference dynamically in JS */
+    stroke-dashoffset: 0; /* Will be set dynamically in JS */
+
+    transition: stroke-dashoffset 0.5s ease; /* Smooth animation for progress changes */
+
+}
+
+@keyframes calorieglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(255, 204, 0, 0.56); /* Soft yellow glow */
+        filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.56)); /* Shadow effect */
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: #ffd600; /* Brighter yellow */
+        filter: drop-shadow(0 0 5px #ffd600); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(255, 204, 0, 0.56); /* Soft yellow glow */
+        filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.56)); /* Shadow effect */
+    }
+}
+
+/* Apply glow effect only to the circle with data-circle="calories" */
+.calorieglow {
+    animation: proteinglow 2.5s infinite ease-in-out;
+
+}
+
+svg[data-circle="calories"] .progress.calorieglow {
+    animation: calorieglow 2.5s infinite ease-in-out; /* Apply the glow animation */
+}
+
+
+
+
+
+
+
+
+
+.text {
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.remaining {
+    font-size: 14px;
+    font-weight: normal;
+    color: #777;
+}
+
+.material-symbols-outlined.energy {
+    font-size: 40px; /* Keep the icon size fixed */
+    color: orange;
+    position: relative;
+    right: 80px;
+    top: 20%; /* Center vertically */
+}
+
+.goal1-container {
+    position: relative; /* To position the number on top of the icon */
+}
+
+.material-symbols-outlined.goal1 {
+    font-size: 40px; /* Keep the icon size fixed */
+    color: #ff7e7e;
+    position: relative;
+    left: 80px;
+    top: 25%; /* Center vertically */
+}
+.goalnumber {
+    font-size: 16px; /* Set a smaller, fixed size for the number */
+    position: absolute;
+    margin-left: 40px; /* Adds space between the number and the icon */
+    top: -1px; /* Align number with the icon vertically */
+    color: #fff; /* White color for the title */
+    font-weight: bold;
+
+
+
+}
+
+.number {
+    font-size: 40px; /* Set a smaller, fixed size for the number */
+    position: absolute;
+    margin-left: 35px; /* Adds space between the number and the icon */
+    top: 5px; /* Align number with the icon vertically */
+    color: #fff; /* White color for the title */
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-title2 {
+    position: absolute;
+    top: -100%; /* Initially hide the title above the card */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 27px;
+    font-weight: bold;
+    opacity: 0; /* Make the title invisible initially */
+    transition: top 0.4s ease, opacity 0.7s ease; /* Smooth transition for top and opacity */
+}
+
+.card2:hover .card-title2 {
+    top: 10px; /* Move the title into view when hovering over the card */
+    opacity: 1; /* Make the title visible */
+}
+
+.card2 {
+    width: 200%;
+    max-width: 150px;
+    min-width: 900px;
+    height: 200px;
+    background-color: #292929;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+    border: 2px solid rgba(7, 7, 7, 0.12);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden; /* Hide any content that goes outside the card */
+}
+
+.card2:hover {
+    height: 340px;
+}
+
+
+.card2:hover .icon i {
+    background: linear-gradient(90deg, #ff7e7e, #ff4848);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center; /* Center cards horizontally */
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Allows wrapping to a new line if needed */
+}
+
+.circle-container {
+    display: flex;
+    justify-content: space-around; /* Distribute the circles with equal space */
+    margin-top: 26px; /* Adjust the top margin for spacing */
+    padding-left: 20px; /* Add left padding to move it further left if needed */
+    gap: 20px; /* Adds space between circles */
+}
+
+.circle-big2 {
+    position: relative; /* Ensures child elements can use absolute positioning */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Adjust as needed for spacing */
+    width: 120px; /* Adjust to match the size of your circle */
+    height: 120px; /* Adjust to match the size of your circle */
+    margin: 0 auto;
+}
+
+.circle-big2 svg {
+    width: 100%; /* Make SVG size responsive to circle size */
+    height: 100%; /* Make SVG size responsive to circle size */
+}
+
+
+
+.circle-big2 .bg {
+    fill: none;
+    stroke-width: 8px; /* Reduced background stroke width */
+    stroke: #1b2a33; /* Background color of the circle */
+}
+
+.circle-big2 .progress {
+    fill: none;
+    stroke-width: 10px; /* Reduced progress stroke width */
+    stroke-linecap: round;
+    stroke-dasharray: 753.98; /* Circumference of the circle (2πr, radius 60) */
+    stroke-dashoffset: 753.98; !important; /* Initial offset for full circle */
+    transform-origin: 50% 50%;
+    animation: big 1.5s ease-out forwards;
+}
+
+.circle-big2 .text {
+    position: absolute;
+    top: 50%; /* Center text vertically */
+    left: 50%; /* Center text horizontally */
+    transform: translate(-15%, -4%); /* Adjust text to truly center */
+    font-size: 20px; /* Adjust font size for better fit */
+    text-align: center;
+}
+
+.main-text {
+    fill: white; /* White color for the main text (e.g. "35g") */
+    font-weight: bold;
+    text-align: center;
+    text-anchor: middle; /* Center horizontally */
+    dominant-baseline: central; /* Center vertically */
+    font-size: 16px; /* Adjust size */
+    
+
+}
+
+.remaining-text {
+    fill: grey !important; /* Greyish color for the "Remaining" text */
+    font-weight: 300 !important;
+    font-size: 14px;
+    text-anchor: middle; /* Center horizontally */
+    dominant-baseline: middle; /* Center vertically */
+}
+
+.circle-title {
+    position: absolute;
+    top: -30px; /* Adjust based on spacing needed above the circle */
+    font-size: 18px; /* Adjust as needed */
+    font-weight: bold; /* Optional for emphasis */
+    text-align: center;
+    color: white; /* Change to match your design */
+}
+
+
+
+
+.circle-title2 {
+    font-size: 10px; /* Adjust font size as needed */
+    margin-bottom: 2px; /* Add space between title and circle */
+    text-align: center;
+    color: white;
+}
+
+
+.circle-big2:nth-child(1) .progress {
+    stroke: purple; /* Progress color for circle 1 (Tomato) */
+}
+
+
+@keyframes proteinglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(128, 0, 128, 0.44); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(128, 0, 128, 0.5)); /* Shadow effect */
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: purple; /* Brighter purple glow */
+        filter: drop-shadow(0 0 19px purple); /* Stronger purple glow with shadow */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(128, 0, 128, 0.44); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(128, 0, 128, 0.5)); /* Soft purple shadow */
+
+    }
+}
+
+
+/* Class to trigger the glow animation */
+.proteinglow {
+    animation: proteinglow 2.5s infinite ease-in-out;
+}
+
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="protein"] .progress.proteinglow {
+    animation: proteinglow 2.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+.circle-big2:nth-child(2) .progress {
+    stroke: #4682b4; /* Progress color for circle 2 (Steel Blue) */
+}
+
+@keyframes carbsglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(70, 130, 180, 0.45); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(70, 130, 180, 0.45)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: #4682b4; /* Brighter purple glow */
+        filter: drop-shadow(0 0 19px  #4682b4); /* Stronger purple glow with shadow */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(70, 130, 180, 0.45);
+        filter: drop-shadow(0 0 5px rgba(70, 130, 180, 0.45)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.carbsglow {
+    animation: carbsglow 2.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="carbs"] .progress.carbsglow {
+    animation: carbsglow 2.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+.circle-big2:nth-child(3) .progress {
+    stroke: #32cd32; /* Progress color for circle 3 (Lime Green) */
+}
+
+
+@keyframes totalfatsglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(50, 205, 50, 0.45); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(50, 205, 50, 0.45)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: #32cd32; /* Brighter purple glow */
+        filter: drop-shadow(0 0 19px  #32cd32); /* Stronger purple glow with shadow */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(50, 205, 50, 0.45); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(50, 205, 50, 0.45)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.totalfatsglow {
+    animation: totalfatsglow 2.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="totalfats"] .progress.totalfatsglow {
+    animation: totalfatsglow 2.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.circle-big2:nth-child(4) .progress {
+    stroke: #ffa500; /* Progress color for circle 4 (Orange) */
+}
+
+
+@keyframes fiberglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(255, 165, 0, 0.45); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.45)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: #ffa500; /* Brighter purple glow */
+        filter: drop-shadow(0 0 19px  #ffa500); /* Stronger purple glow with shadow */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(255, 165, 0, 0.45); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.45)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.fiberglow {
+    animation: fiberglow 2.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="fiber"] .progress.fiberglow {
+    animation: fiberglow 2.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.circle-big2:nth-child(5) .progress {
+    stroke: #ff4500; /* Progress color for circle 6 (OrangeRed) */
+}
+
+
+@keyframes sugarglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(255, 69, 0, 0.45); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.45)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke:  #ff4500; /* Brighter purple glow */
+        filter: drop-shadow(0 0 19px #ff4500); /* Stronger purple glow with shadow */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(255, 69, 0, 0.45); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.45)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.sugarglow {
+    animation: sugarglow 2.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="sugar"] .progress.sugarglow {
+    animation: sugarglow 2.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.circle-big2:nth-child(6) .progress {
+    stroke: red; /* Progress color for circle 6 (OrangeRed) */
+}
+
+@keyframes sodiumglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(255, 0, 0, 0.4); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.4)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke:  red; /* Brighter purple glow */
+        filter: drop-shadow(0 0 19px red); /* Stronger purple glow with shadow */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(255, 0, 0, 0.4); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.4)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.sodiumglow {
+    animation: sodiumglow 2.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="sodium"] .progress.sodiumglow {
+    animation: sodiumglow 2.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.small-circle-container2 {
+    display: flex;
+    justify-content: center; /* Center the small circles horizontally */
+    gap: 10px; /* Space between small circles */
+
+    opacity: 0; /* Hide the circles by default */
+    visibility: hidden; /* Hide the circles completely */
+    transition: opacity 0.1s ease, visibility 1.4s ease; /* Smooth transition for showing and hiding */
+    position: absolute; /* Position the small circle container relative to the card */
+    bottom: 20px !important; /* Initially move the small circle container down below the card */
+    left: 50%;
+    transform: translateX(-50%); /* Center the container horizontally */
+}
+
+/* Styling for the small circles */
+.small-circle {
+    width: 60px; /* Smaller size for the circle */
+    height: 60px;
+}
+
+.small-circle svg {
+    width: 100%;
+    height: 100%;
+}
+
+.small-circle .bg,
+.small-circle .progress {
+    fill: none;
+    stroke-width: 10px; /* Smaller stroke width for smaller circles */
+}
+
+.small-circle .bg {
+    stroke: #1b2a33;
+}
+
+
+
+
+
+
+.small-circle .progress {
+    stroke: #ff7e7e;
+    stroke-linecap: round;
+    stroke-dasharray: 0; /* Full circle length for 60px circle */
+    stroke-dashoffset: 0; /* Start with the circle completely empty */
+    transform-origin: 50% 50%;
+}
+
+
+
+
+@keyframes folateglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.folateglow {
+    animation: folateglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="Folate"] .progress.folateglow {
+    animation: folateglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes vitaminCglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.vitaminCglow {
+    animation: vitaminCglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="VitaminC"] .progress.vitaminCglow {
+    animation: vitaminCglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+@keyframes vitaminDglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.vitaminDglow {
+    animation: vitaminDglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="VitaminD"] .progress.vitaminDglow {
+    animation: vitaminDglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes niacinglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.niacinglow {
+    animation: niacinglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="Niacin"] .progress.niacinglow {
+    animation: niacinglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+@keyframes riboflavinglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.riboflavinglow {
+    animation: riboflavinglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="Riboflavin"] .progress.riboflavinglow {
+    animation: riboflavinglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+@keyframes calciumglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.calciumglow {
+    animation: calciumglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="Calcium"] .progress.calciumglow {
+    animation: calciumglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+@keyframes ironglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.ironglow {
+    animation: ironglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="Iron"] .progress.ironglow {
+    animation: ironglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes magnesiumglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.magnesiumglow {
+    animation: magnesiumglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="Magnesium"] .progress.magnesiumglow {
+    animation: magnesiumglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+@keyframes potassiumglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.potassiumglow {
+    animation: potassiumglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="Potassium"] .progress.potassiumglow {
+    animation: potassiumglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+@keyframes zincglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.zincglow {
+    animation: zincglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="Zinc"] .progress.zincglow {
+    animation: zincglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+@keyframes thiaminglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px green); /* Shadow effect */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.51); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.51)); /* Shadow effect */
+
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the svg with data-circle="protein" */
+.thiaminglow {
+    animation: thiaminglow 1.5s infinite ease-in-out;
+
+}
+
+/* Apply glow animation when the 'proteinglow' class is added */
+svg[data-circle="Thiamin"] .progress.thiaminglow {
+    animation: thiaminglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Text inside the small circles */
+.small-circle .text2 {
+    font-size: 16px;
+    font-weight: bold;
+    left: 25px;
+    fill: white;
+    transform: translate(02%, 9%); /* Center the text */
+}
+
+.card2:hover .small-circle-container2 {
+    opacity: 1; /* Show the circles */
+    visibility: visible; /* Make the circles visible */
+    bottom: 3px; /* Move the small circle container up when hovering (adjust the final position as needed) */
+}
+
+
+
+
+
+
+
+
+
+td {
+    color: #a0a0a0;
+    text-align: center; /* Center-align the text in each <th> */
+
+}
+
+
+.card3 {
+    width: 100%;
+    max-width: 1000px;
+    min-width: 600px;
+    height: 300px;
+    background-color: #292929;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+    border: 2px solid rgba(7, 7, 7, 0.12);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: flex-start; /* Align children to the top */
+    align-items: center;
+    flex-direction: column;
+    overflow: visible !important; /* Prevents menu items from being cut off */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+.card-icon3 {
+    font-size: 70px !important;
+    margin-bottom: 10px; /* Space between the icon and card4 */
+    color: white;
+}
+
+
+
+
+
+
+
+.container8 {
+    position: relative; /* This makes sure the menu stays inside */
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Prevent vertical centering issues */
+    padding: 10px;
+    height: auto; /* Adjust height based on content */
+    overflow: visible; /* Allow overflowing content */
+}
+.card4 {
+    color: white ;  /* Change this to your desired color */
+    width: 100%; /* Full width inside .card3 */
+    background-color: #1d1d1d;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    box-sizing: border-box;
+    max-height: 500px; /* Limit height with vertical scroll */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    white-space: nowrap;
+    position: relative; /* This makes sure the menu stays inside */
+
+}
+
+.add-food-container {
+    display: flex; /* Enable flexbox layout */
+    grid-template-columns: repeat(1, auto); /* Creates 2 columns */
+    gap: 10px; /* Optional: Space between the items */
+}
+
+
+
+
+.card3label {
+    position: absolute;
+    top: 10px; /* Adjust for spacing from top */
+    left: 10px; /* Adjust for spacing from left */
+    margin: 0; /* Remove default margin */
+    font-size: 24px; /* Adjust font size as needed */
+    color: white; /* Adjust text color */
+}
+
+.custom-table th {
+    text-align: center; /* Center-align the text in each <th> */
+    padding: 20px; /* Add padding for a bit of space */
+    color: white;
+    width: 100%; /* Full width */
+    table-layout: fixed; /* Equal column widths */
+    border-collapse: collapse;
+}
+
+.today-text {
+    position: absolute;
+    top: 10px; /* Adjust top as needed */
+    left: 10px; /* Adjust left as needed */
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #333; /* Adjust text color as needed */
+    cursor: pointer;
+}
+
+
+
+.container1 {
+    position: relative; /* Use fixed positioning to keep it in place when scrolling */
+    bottom: 31px; /* Adjust top positioning */
+    left: 30px; /* Position it on the left side */
+    z-index: 99;
+    width: 80px; /* Set width according to your preference */
+    height: 80px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    right: 50%; /* Keep this unchanged if you want to keep centered positioning */
+    transform: translate(50%, -50%);
+}
+
+p {
+    line-height: 1;
+    margin-top: 95px;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Wrapper for the infinite scroll */
+.center-wrapper10 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 200px; /* Adjust the height for better fit */
+    max-height: 300px;
+
+
+}
+
+/* Card container with horizontal scrolling */
+.card10 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+
+
+}
+
+/* Individual card item */
+.card10-item {
+    border: none !important; /* Removes all borders (top, right, bottom, left) */
+    background-color: transparent !important; /* Transparent background for the card */
+    width: 100%; /* Let it expand fully to the available width */
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column !important; /* Make sure content stretches vertically */
+}
+
+/* Dashboard content inside each card */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+     box-sizing: border-box;
+    border-radius: 40px; /* Rounded corners for the dashboard content */
+     width: 100%;
+    height: 200px; /* Set the height to a smaller value */
+    margin: 0 auto 20px auto;
+    background-color: #1e1e1e; /* Optional contrasting background */
+    
+}
+
+#caloriesTimeGraph {
+    width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*VARIABLE*/
+:root {
+    --btWidthHeight: 25px;
+    --btThickness: 3px;
+    --btColor: #999;
+    --btHoverColor: #FF7E7E;
+    --btActiveColor: #FF7E7E;
+    --btTransiTime: 0.05s;
+}
+/*END VARIABLE
+---------------------------------------------------------*/
+
+/*GENERAL*/
+
+/*END GENERAL
+---------------------------------------------------------*/
+
+/*BUTTONS CREATION*/
+.back, .next {
+    position: relative;
+    display: block;
+    float: left;
+    left: 8px;
+    top: 16px;
+    margin: 0 20px 0 0;
+    width: var(--btWidthHeight);
+    height: var(--btWidthHeight);
+    border: solid var(--btColor) var(--btThickness);
+    border-radius: 100%;
+}
+
+.back:before, .next:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    border: solid var(--btColor) var(--btThickness);
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg) skewX(10deg) skewY(10deg);
+}
+
+.back:before {
+    border-right: none;
+    border-bottom: none;
+    left: 58%;
+}
+
+.next:before {
+    border-top: none;
+    border-left: none;
+    left: 42%;
+}
+/*END BUTTONS CREATION
+---------------------------------------------------------*/
+
+
+/*EFFECT*/
+.back, .next {
+    cursor: pointer;
+    transition: all var(--btTransiTime) linear;
+}
+
+.back:before, .next:before {
+    transition: all var(--btTransiTime) linear;
+}
+
+.back:hover, .next:hover {
+    border-width: calc(var(--btThickness) + 1px);
+    border-color: var(--btHoverColor);
+}
+
+.back:hover:before, .next:hover:before {
+    border-width: calc(var(--btThickness) + 1px);
+    border-color: var(--btHoverColor);
+}
+
+.back:active:before {
+    left: 52%;
+}
+
+.next:active:before {
+    left: 48%;
+}
+
+.btclick {
+    border-width: calc(var(--btThickness) + 2px);
+    border-color: var(--btActiveColor);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hidden {
+    display: none; /* Initially hide the form */
+}
+
+.card-container99 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.card99 {
+    position: relative;
+    width:250px;
+    height: 50px;
+    background-color: #292929;
+    border-radius: 50px;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: height 0.3s ease;
+}
+
+.headings-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.add-food-heading {
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 18px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.add-food-heading:hover {
+    color:#FF7E7E;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    width: 100%;
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.maininfoinput {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    width: 100%;
+    max-width: 400px !important;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #FF7E7E;
+    background-color: #fff;
+}
+
+
+
+.custom-delete-button {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #FF7E7E;
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Show pointer cursor on hover */
+    text-decoration: none; /* Remove underline */
+
+}
+/* Remove the hover effect */
+.custom-delete-button:hover {
+    background-color: transparent; /* Remove any background color on hover */
+    text-decoration: none; /* Ensure no underline or style change on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button {
+    background-color: #FF7E7E;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #FF7E7E;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: -400px; /* Initially off-screen */
+    width: 350px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Optional dimmed background */
+    transition: left 1.0s ease-in-out; /* Smooth slide-in transition */
+}
+
+/* Modal content (Sidebar) */
+.modal-content {
+    background-color: #fff;
+    height: 100%;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+
+    padding: 20px;
+    border-right: 2px solid #888; /* Optional border between content and sidebar */
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2); /* Optional shadow on the right edge */
+    border-radius: 0; /* Remove border-radius to make it more like a sidebar */
+}
+
+/* When the modal is open (slide in) */
+.modal.open {
+    left: 0px; /* Slide the sidebar in */
+}
+
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hidden class for the search form */
+.hidden {
+    display: none;
+}
+
+
+
+
+.main-info {
+    
+    font-size: 20px;
+}
+
+
+
+.serving-info{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.serving-info label{
+    font-size: 16px;
+
+}
+
+
+.serving-input{
+    width: 80px; /* Adjust width to fit the layout better */
+    margin-bottom: 10px;
+}
+.serving-info div{
+    display: flex;
+    justify-content: space-between; /* Space between label and input */
+    align-items: center; /* Aligns the label and input vertically in the middle */
+    
+}
+
+
+
+
+
+.main-nutrients {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.main-nutrients label{
+    font-size: 14px;
+
+}
+.main-nutrients div {
+    display: flex;
+    justify-content: space-between; /* Space between label and input */
+    align-items: center; /* Aligns the label and input vertically in the middle */
+}
+
+.large-input {
+    width: 95px; /* Adjust width to fit the layout better */
+    margin-bottom: 10px;
+}
+
+
+.additional-nutrients {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5px;
+}
+
+
+
+.additional-nutrients label {
+    font-size: 14px;
+    line-height: 30px; /* Adjust line height to align label vertically */
+
+
+}
+
+
+.small-input {
+    width: 80px;
+    margin-bottom: 40px;
+    margin-right: 80px; /* Reduces the space between label and input */
+    margin-left: 0; /* Removes any extra margin on the left */
+
+}
+
+
+
+
+
+
+
+
+
+
+.form-actions {
+    display: flex;
+    align-items: center; /* Vertically aligns label, input, and button */
+    gap: 18px; /* Adds spacing between label, input, and button */
+}
+
+/* Style for the label */
+.label-name {
+    line-height: 1; /* Ensures consistent height alignment with the input */
+    height: 30px; /* Ensure input height matches the button */
+
+    font-size: 14px;
+    margin: 0; /* Reset any margins on the label */
+}
+
+/* Style for the quantity input */
+#quantity {
+    width: 60px; /* Adjust width for better proportions */
+    text-align: center; /* Center text inside the input */
+    box-sizing: border-box; /* Ensures padding doesn't affect width/height */
+    height: 25px; /* Ensure input height matches the button */
+
+    padding: 5px; /* Add padding for better appearance */
+}
+
+/* Style for the Save button */
+#saveButton {
+    padding: 10px 20px;
+    height: 35px; /* Matches the height of the input for alignment */
+    border-radius: 5px; /* Add rounded corners for a polished look */
+margin-bottom: 30px;
+    background-color: #FF7E7E;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#saveButton:hover {
+    background-color: #FF6161; /* Darkens the button on hover */
+}
+
+
+
+
+
+
+
+.cholestrol-title{
+    position: absolute;
+    top: -200%; /* Initially hide the title above the card */
+    left: 88%;
+    opacity: 0; /* Make the title invisible initially */
+    transition: top 0.4s ease, opacity 0.9s ease;
+    z-index: 1000;
+    display: flex;           /* Use Flexbox for layout */
+    flex-direction: column;  /* Arrange elements in a column */
+    align-items: center;     /* Center align the items horizontally */
+    text-align: center;      /* Center align the text */
+    
+}
+
+#cholesterol-icon {
+    color: white;
+}
+
+.cholestrol-title-number {
+    font-size: 14px; /* Adjust font size */
+    font-weight: bold;
+    color: white; /* Color of the number */
+    top: -150%;
+    left: 88%;
+    position: absolute; /* Absolute positioning relative to the .cup */
+    transform: translate(-50%, -50%); /* Adjust position to be exactly centered */
+    opacity: 1; /* Make the title invisible initially */
+    transition: top 0.4s ease, opacity 0.9s ease;
+
+
+}
+.card2:hover .cholestrol-title-number {
+    top: 50px; /* Move the title into view when hovering over the card */
+    opacity: 1; /* Make the title visible */
+}
+
+
+.main-cholestrol-title {
+    font-size: 16px;         /* Adjust the font size of the title */
+    font-weight: bold;       /* Make the title bold */
+    margin-bottom: 5px;      /* Add space between the title and the icon */
+    color: white;            /* Adjust title color */
+}
+
+.card2:hover .cholestrol-title {
+    top: 14px; /* Move the title into view when hovering over the card */
+    opacity: 1; /* Make the title visible */
+}
+
+
+
+
+/* Green glow */
+.cholesterol-glow-green {
+    color: green;
+    animation: cholesterol-glow-green 2.0s infinite ease-in-out;
+    text-shadow: 0 0 2px rgba(0, 128, 0, 0.32), 0 0 4px #00ff00;
+}
+
+/* Yellow glow */
+.cholesterol-glow-yellow {
+    color: yellow;
+    animation: cholesterol-glow-yellow 1.2s infinite ease-in-out;
+    text-shadow: 0 0 2px rgba(255, 255, 0, 0.32), 0 0 4px #ffff00;
+}
+
+/* Red glow */
+.cholesterol-glow-red {
+    color: red;
+    animation: cholesterol-glow-red 0.8s infinite ease-in-out;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.32), 0 0 15px #ff0000;
+}
+
+/* Keyframes for animations (optional customization) */
+@keyframes cholesterol-glow-green {
+    0%, 100% {
+        text-shadow: 0 0 5px #7eff7e, 0 0 15px #00ff00;
+    }
+    50% {
+        text-shadow: 0 0 10px #7eff7e, 0 0 20px #00ff00;
+    }
+}
+
+@keyframes cholesterol-glow-yellow {
+    0%, 100% {
+        text-shadow: 0 0 5px #ffef7e, 0 0 15px #ffff00;
+    }
+    50% {
+        text-shadow: 0 0 10px #ffef7e, 0 0 20px #ffff00;
+    }
+}
+
+@keyframes cholesterol-glow-red {
+    0%, 100% {
+        text-shadow: 0 0 5px #ff7e7e, 0 0 15px #ff0000;
+    }
+    50% {
+        text-shadow: 0 0 10px #ff7e7e, 0 0 20px #ff0000;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cup-title2 {
+    position: absolute;
+    top: -200%; /* Initially hide the title above the card */
+    right: 94%;
+    opacity: 0; /* Make the title invisible initially */
+    transition: top 0.4s ease, opacity 0.9s ease;
+    z-index: 1000;
+
+}
+.card2:hover .cup-title2 {
+    top: 40px; /* Move the title into view when hovering over the card */
+    opacity: 1; /* Make the title visible */
+}
+.cup {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 36px;
+    border: 1px solid #262626;
+    border-top: 2px solid transparent;
+    border-radius: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: url(https://image.ibb.co/fmHm66/wave.png);
+    background-position: 50px 0px;
+    background-repeat: repeat-x;
+    animation: filling 8s ease-in-out infinite;
+    box-shadow: 0 0 0 3px #fff, 0 20px 35px rgba(0,0,0,1);
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.5s ease; /* Smooth transition */
+
+
+
+}
+.cup-number {
+    font-size: 14px; /* Adjust font size */
+    font-weight: bold;
+    color: white; /* Color of the number */
+    top: 40%;
+    left: 50%;
+    position: absolute; /* Absolute positioning relative to the .cup */
+    transform: translate(-50%, -50%); /* Adjust position to be exactly centered */
+
+
+}
+
+
+@keyframes filling {
+    0% {
+        background-position: -120px -120px;  /* Full cup */
+    }
+    25% {
+        background-position: 125px 18px; /* Subtle downward wave */
+    }
+    50% {
+        background-position: -50px -40px; /* Water starts to come back up */
+    }
+    75% {
+        background-position: 100px 10px; /* Water reaches the top again */
+    }
+    100% {
+        background-position: 300px -150px; /* Water reaches the top again */
+    }
+   
+   
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row; /* Stack buttons vertically */
+    gap: 10px; /* Adds spacing between buttons */
+    position: absolute;
+    top: -100%; /* Initially hide the title above the card */
+    right: 88%;
+    opacity: 0; /* Make the title invisible initially */
+    transition: top 0.4s ease, opacity 0.9s ease;
+    z-index: 1000;
+    
+   
+}
+.card2:hover .buttons {
+    top: 5px; /* Move the title into view when hovering over the card */
+    opacity: 1; /* Make the title visible */
+}
+.buttons .btn {
+    border: none; /* Remove the border */
+    background-color: transparent; /* Set background to transparent */
+    color: white; /* Color of the symbol */
+    font-size: 28px; /* Adjust the font size for the symbols */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Show a pointer when hovering */
+    
+}
+
+
+
+/* Styling for the toast */
+.toast {
+    visibility: hidden; /* Hide by default */
+    min-width: 250px;
+    margin-left: -125px; /* Center the toast horizontally */
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    text-align: center;
+    border-radius: 40px;
+    padding: 16px;
+    position: fixed; /* Fixed position to stay on the screen */
+    z-index: 1; /* Ensure it's on top of other content */
+    left: 50%;
+    top: 20px; /* Position the toast 20px from the top */
+    font-size: 17px;
+}
+
+/* Show the toast when it gets the "show" class */
+.toast.show {
+    visibility: visible;
+    animation: slideDown 0.5s ease-out; /* Add animation for the toast */
+}
+
+/* Animation for the toast slide-in from the top */
+@keyframes slideDown {
+    from {
+        top: -100px; /* Start above the screen */
+    }
+    to {
+        top: 20px; /* End at 20px from the top */
+    }
+}
+
+
+
+
+
+.Quickaddfoodlog {
+    position: absolute; /* Allows precise positioning */
+    left: 10px; /* Adjust this value as needed to set the distance from the left edge */
+    color: #ff7e7e; /* Sets the text color to white */
+    font-size: 16px; /* Adjust the font size as needed */
+    font-weight: bold; /* Optional: makes the text bold */
+    text-align: left; /* Ensures text alignment to the left */
+    top: 75px; /* Adjust this to control the vertical position */
+    cursor: pointer;
+}
+
+/* Modal Background */
+.quickmodal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Modal Content */
+.quickaddmodal-content {
+    background-color: white;
+    margin: 15% auto; /* Center vertically and horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 600px; /* Set a fixed width for the rectangle */
+    height: 700px; /* Set a fixed height for the rectangle */
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex-direction: column; /* Stack content vertically */
+    align-items: stretch; /* Ensure content spans full width */
+    box-sizing: border-box; /* Include padding in width calculations */
+
+}
+
+/* Close Button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ff7e7e;
+    text-decoration: none;
+}
+
+
+/* Search Bar in Modal */
+.quick-add-search-bar {
+    max-width: 500px; /* Full width of modal content */
+    
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+}
+
+.quick-add-search-bar:focus {
+    border-color: #ff7e7e; /* Change border color on focus */
+    box-shadow: 0 0 5px #ff7e7e; /* Add shadow effect */
+}
+
+
+
+/* Search Results Container */
+.quick-add-results-container {
+    width: 550px;
+    height: 500px; /* Adjust height as needed */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 40px;
+    margin-top: 10px;
+    overflow-y: auto; /* Enable scrolling for long results */
+    padding: 10px; /* Add padding inside the container */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+    text-align: left; /* Ensure content aligns to the left */
+
+}
+
+/* Optional: Style individual result items (if needed) */
+.quick-add-result-item {
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.quick-add-result-item:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+}
+
+
+
+.add-food-button {
+    position: absolute; /* Allows precise positioning */
+    left: 120px; /* Adjust this value as needed to set the distance from the left edge */
+    color: #ff7e7e; /* Sets the text color to white */
+    font-size: 16px; /* Adjust the font size as needed */
+    font-weight: bold; /* Optional: makes the text bold */
+    text-align: left; /* Ensures text alignment to the left */
+    top: 75px; /* Adjust this to control the vertical position */
+    cursor: pointer;
+}
+
+
+.createmealbutton {
+    position: absolute; /* Allows precise positioning */
+    left: 225px; /* Adjust this value as needed to set the distance from the left edge */
+    color: #ff7e7e; /* Sets the text color to white */
+    font-size: 16px; /* Adjust the font size as needed */
+    font-weight: bold; /* Optional: makes the text bold */
+    text-align: left; /* Ensures text alignment to the left */
+    top: 75px; /* Adjust this to control the vertical position */
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Parent container to keep hover active */
+.options-container {
+    position: relative;
+    bottom: 75px; /* Adjust positioning */
+    left: 453px; /* Adjust positioning */
+    z-index: 9999;
+}
+
+/* Floating Options Button */
+.options {
+    position: absolute; /* Now relative to .options-container */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Button */
+.options .bg_links {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Main Bubble (FontAwesome Version) */
+.options .logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    font-size: 43px;
+    justify-content: center;
+    align-items: center;
+    color: white !important;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* Menu Items */
+.menu {
+    position: absolute;
+    bottom: 50px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none; /* Prevent accidental clicks when hidden */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Individual Logo Bubbles */
+.menu-item {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    gap: 13px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+    transform: scale(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    pointer-events: auto; /* Keeps them clickable */
+}
+
+
+/* Icons inside bubbles */
+.menu-item .icon {
+    font-size: 42px;
+    color: white;
+}
+
+/* Keep menu open when hovering over the container */
+.options-container:hover .menu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.options-container:hover .menu-item {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Hover color effects */
+.menu-item:hover {
+    background-color: #FF7E7E;
+}
+
+
+
+
+
+.food-item {
+    padding: 12px;
+    font-family: Arial, sans-serif;
+    border-radius: 40px;
+    
+}
+
+.food-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #cf5858; /* Blue color for title links */
+}
+
+.food-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.food-title a:hover {
+    text-decoration: underline;
+}
+
+.verified-icon {
+    width: 60px;  /* Exact width you want */
+    height: 60px; /* Exact height you want */
+    object-fit: cover; /* Ensures the logo fits into the box, cropping if necessary */
+    margin: 0;  /* Remove margin */
+    padding: 0; /* Remove padding */
+    display: inline-block;  /* Prevents extra space around the image */
+    vertical-align: middle; /* Align with text */
+    border: none; /* Remove any border */
+
+}
+
+.food-brand {
+    font-size: 14px;
+    color: #666;
+    margin-top: 2px;
+    font-weight: bolder;
+}
+
+.food-details {
+    font-size: 14px;
+    color: #333;
+    margin-top: 4px;
+}
+
+
+
+.quick-add-result-item:last-child {
+    border-bottom: none; /* Remove border from last item */
+}
+
+
+
+
+
+
+
+
+
+
+.modal1 {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    max-width: 90%;
+    height: 500px;
+    max-height: 90vh;
+    background: white;
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 40px;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.modal-content1 {
+    position: relative;
+    width: 100%; /* Ensure it takes full width */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+    overflow: hidden;
+    padding: 10px;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.split-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+}
+
+.left-panel {
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 200px;
+    overflow-y: auto;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+.right-panel
+{
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 200px;
+    overflow-y: auto;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+.button-container {
+    text-align: center;  /* Centers the button text */
+}
+
+
+#savedMealsContainer{
+    width: 20%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 200px;
+    overflow-y: auto;
+    border-radius: 10px;
+    background: #f9f9f9;
+    
+    
+}
+
+.search-results1 {
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+
+
+
+
+
+.search-results1, .meal-container {
+    border: 1px solid #ccc;
+    height: 200px; /* or any appropriate height */
+    overflow-y: auto; /* Allows scrolling */
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+#savedMealsList {
+    max-height: 500px;
+    max-width: 400px; /* Adjust the height as needed */
+    overflow-y: auto; /* Makes the div scrollable */
+    cursor: pointer;
+    text-align: left;
+
+}
+
+
+
+
+.saved-meal {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+    padding: 8px;
+    display: flex;  
+    justify-content: space-between; 
+}
+
+.saved-meal:last-child {
+    margin-bottom: 0;
+}
+
+.saved-meal span {
+    color: #FF7E7E; 
+    cursor: pointer; 
+    margin-left: 10px; 
+    font-size: 17px;
+}
+
+
+
+
+
+
+.search-item1 {
+    padding: 5px;
+    background: #f1f1f1;
+    margin: 5px 0;
+    cursor: grab;
+    border-radius: 5px;
+}
+
+.meal-container {
+    min-height: 100px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.meal-item {
+    display: flex;
+    margin-bottom: 10px; /* Adds space below each item */
+    align-items: center; /* Ensures vertical alignment of children */
+    justify-content: space-between; /* Distributes space between and around content items */
+    padding: 8px;       /* Adds some padding inside the box */
+    background-color: #b7f0ad; /* Light green background */
+    border-radius: 10px; /* Rounded corners for the box */
+}
+
+
+/* ✅ Fix Input Fields */
+#mealName, #mealSearch {
+    width: 250px; /* Make inputs expand fully */
+    max-width: 100%; /* Prevent overflow */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+
+#mealSearch {
+    width: 600px; /* Keep input size reasonable */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    text-align: center; /* Ensures text is also centered */
+}
+
+
+.deletemeal-btn {
+    display: inline-block; /* Makes span behave like a block element to allow padding */
+    background: transparent;
+    border: none;
+    color: #333;       /* Darker font color for visibility */
+    font-size: 20px;   /* Adjusts the size of the 'X' */
+    cursor: pointer;
+    padding: 0 12px;   /* Right padding for spacing */
+    line-height: 1;    /* Aligns closer with the line of text */
+}
+
+.deletemeal-btn:hover {
+    color: #cf5858;   /* Changes the color to red on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nutrition-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    max-width: 90%;
+    height: 400px;
+    max-height: 90vh;
+    background: white;
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 40px;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;  /* Center vertically */
+}
+
+.nutrition-modal-content {
+    position: relative;
+    width: 100%; /* Ensure it takes full width */
+    height: 100%;
+    flex-direction: column;
+    border-radius: 40px;
+    overflow: visible;
+    padding: 10px;
+    border: 1px solid white;
+    box-sizing: border-box; 
+}
+
+#nutritionFactsModal .nutrition-close {
+    color: #aaa;             /* Light grey color for the close button */
+    position: absolute;      /* Position absolutely within the modal content */
+    top: 6px;               /* Position at the top inside the modal */
+    right: 4px;             /* Position at the right inside the modal */
+    font-size: 28px;         /* Large font size for easy clicking */
+    font-weight: bold;       /* Bold font weight */
+    cursor: pointer;         /* Pointer cursor on hover */
+}
+
+#nutritionFactsModal .nutrition-close:hover,
+#nutritionFactsModal .nutrition-close:focus {
+    color: black;            /* Darken color on hover/focus for better visibility */
+    text-decoration: none;   /* No text decoration */
+}
+
+
+
+
+
+
+
+
+
+
+
+.nutrition-small-circle-container2 {
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Full width of the modal content */
+    transform: scale(0.34); /* Adjust the scale factor to your needs */
+    transform-origin: center; /* Ensures the SVG scales down from the center */
+    margin-top: -245px; /* Pulls the entire container up by 20px */
+    margin-left: -225px;
+}
+
+
+.nutriton-circle-title2{
+    
+    font-size: 32px;
+    font-weight: bold;
+    position: relative; /* Allows use of the 'left' property */
+    right: 23px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.nutrition-small-circle-container {
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Full width of the modal content */
+    transform: scale(0.34); /* Adjust the scale factor to your needs */
+    transform-origin: center; /* Ensures the SVG scales down from the center */
+    margin-top: -135px; /* Pulls the entire container up by 20px */
+    margin-left: -225px;
+}
+
+
+
+.nutriton-circle-title
+{
+    font-size: 32px;
+    font-weight: bold;
+    position: relative; /* Allows use of the 'left' property */
+    right: 21px; /* Moves the title 20px to the right from its normal position */
+}
+
+
+
+
+
+
+
+
+
+.nutrition-small-circle-container3 {
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Full width of the modal content */
+    transform: scale(0.34); /* Adjust the scale factor to your needs */
+    transform-origin: center; /* Ensures the SVG scales down from the center */
+    margin-top: -250px; /* Pulls the entire container up by 20px */
+    margin-left: -225px;
+}
+
+
+
+.nutriton-circle-title3
+{
+    font-size: 32px;
+    font-weight: bold;
+    position: relative; /* Allows use of the 'left' property */
+    right: 21px; /* Moves the title 20px to the right from its normal position */
+}
+
+
+
+
+.nutrition-small-circle .nutrition-bg{
+    fill: none;
+    stroke-width: 8px; /* Reduced background stroke width */
+    stroke: #1b2a33; /* Background color of the circle */
+}
+
+
+.nutrition-small-circle {
+    flex: 1; /* Allows each circle to grow and take equal space */
+    text-align: center; /* Ensures titles and SVGs are centered */
+    margin:  -12px; /* Close spacing */
+
+
+}
+
+
+
+
+.nutrition-small-circle svg {
+    width: 100%;
+    height: 100%;
+  
+}
+
+.nutrition-small-circle .nutrition-progress {
+    fill: none;
+    stroke-width: 10px; /* Reduced progress stroke width */
+    stroke-linecap: round;
+    stroke-dasharray: 0; /* Circumference of the circle (2πr, radius 60) */
+    stroke-dashoffset: 0; !important; /* Initial offset for full circle */
+    transform-origin: 50% 50%;
+    animation: big 1.5s ease-out forwards;
+
+
+}
+
+
+ 
+
+
+
+.nutrition-small-circle .text3 {
+    position: absolute; /* Position the text absolutely within its relative parent */
+    top: 50%; /* Position at half the height of the parent */
+    left: 50%; /* Position at half the width of the parent */
+    transform: translate(-0%, 3%); /* Shift the text back by half its own width and height to center */
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%; /* Ensure the text spans the width of the circle for proper center alignment */
+}
+
+
+
+
+
+
+#proteinprogress{
+    stroke: purple; /* Intense green glow */
+
+}
+
+@keyframes nutritionproteinnglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.38); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.38)); /* Shadow effect */
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Intense green glow */
+        filter: drop-shadow(0 0 19px green); /* Strong shadow effect */
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.38); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.38)); /* Shadow effect */
+    }
+}
+
+
+/* Apply glow effect only to the circle inside the SVG with data-circle="NutritionProtein" */
+.nutritionproteinnglow {
+    animation: nutritionproteinnglow 1.5s infinite ease-in-out;
+}
+
+/* Apply glow animation when the 'nutritionproteinnglow' class is added */
+svg[data-circle="NutritionProtein"] .nutrition-progress.nutritionproteinnglow {
+    animation: nutritionproteinnglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#carbsprogress{
+    stroke:  #4682b4; /* Intense green glow */
+
+}
+
+@keyframes nutritioncarbsglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.38); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.38)); /* Shadow effect */
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Intense green glow */
+        filter: drop-shadow(0 0 19px green); /* Strong shadow effect */
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.38); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.38)); /* Shadow effect */
+    }
+}
+
+/* Apply glow effect only to the circle inside the SVG with data-circle="NutritionProtein" */
+.nutritioncarbsglow {
+    animation: nutritioncarbsglow 1.5s infinite ease-in-out;
+}
+
+/* Apply glow animation when the 'nutritionproteinnglow' class is added */
+svg[data-circle="NutritionCarbs"] .nutrition-progress.nutritioncarbsglow {
+    animation: nutritioncarbsglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+#fatsprogress{
+    stroke:  #32cd32; /* Intense green glow */
+
+}
+
+@keyframes nutritionfatsglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.38); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.38)); /* Shadow effect */
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Intense green glow */
+        filter: drop-shadow(0 0 19px green); /* Strong shadow effect */
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.38); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.38)); /* Shadow effect */
+    }
+}
+
+/* Apply glow effect only to the circle inside the SVG with data-circle="NutritionProtein" */
+.nutritionfatsglow {
+    animation: nutritionfatsglow 1.5s infinite ease-in-out;
+}
+
+/* Apply glow animation when the 'nutritionproteinnglow' class is added */
+svg[data-circle="NutritionFats"] .nutrition-progress.nutritionfatsglow {
+    animation: nutritionfatsglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+#fatsprogress{
+    stroke:  #32cd32; /* Intense green glow */
+
+}
+
+@keyframes nutritionfatsglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.38); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.38)); /* Shadow effect */
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Intense green glow */
+        filter: drop-shadow(0 0 19px green); /* Strong shadow effect */
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.38); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.38)); /* Shadow effect */
+    }
+}
+
+/* Apply glow effect only to the circle inside the SVG with data-circle="NutritionProtein" */
+.nutritionfatsglow {
+    animation: nutritionfatsglow 1.5s infinite ease-in-out;
+}
+
+/* Apply glow animation when the 'nutritionproteinnglow' class is added */
+svg[data-circle="NutritionFats"] .nutrition-progress.nutritionfatsglow {
+    animation: nutritionfatsglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+#fatsprogress{
+    stroke:  #32cd32; /* Intense green glow */
+
+}
+
+@keyframes nutritionfatsglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.38); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.38)); /* Shadow effect */
+    }
+    50% {
+        stroke-width: 12;
+        stroke: green; /* Intense green glow */
+        filter: drop-shadow(0 0 19px green); /* Strong shadow effect */
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(0, 128, 0, 0.38); /* Soft purple glow */
+        filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.38)); /* Shadow effect */
+    }
+}
+
+/* Apply glow effect only to the circle inside the SVG with data-circle="NutritionProtein" */
+.nutritionfatsglow {
+    animation: nutritionfatsglow 1.5s infinite ease-in-out;
+}
+
+/* Apply glow animation when the 'nutritionproteinnglow' class is added */
+svg[data-circle="NutritionFats"] .nutrition-progress.nutritionfatsglow {
+    animation: nutritionfatsglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+#fiberprogress{
+    stroke: #ffa500; /* Brighter purple glow */
+
+}
+
+@keyframes nutritionfiberglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(255, 165, 0, 0.45); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.45)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke: #ffa500; /* Brighter purple glow */
+        filter: drop-shadow(0 0 19px  #ffa500); /* Stronger purple glow with shadow */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(255, 165, 0, 0.45); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.45)); /* Shadow effect */
+
+    }
+}
+
+/* Apply glow effect only to the circle inside the SVG with data-circle="NutritionProtein" */
+.nutritionfiberglow {
+    animation: nutritionfiberglow 1.5s infinite ease-in-out;
+}
+
+/* Apply glow animation when the 'nutritionproteinnglow' class is added */
+svg[data-circle="NutritionFiber"] .nutrition-progress.nutritionfiberglow {
+    animation: nutritionfiberglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+#sugarprogress{
+    stroke:  #ff4500; /* Brighter purple glow */
+
+}
+
+@keyframes nutritionsugarglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(255, 0, 0, 0.4); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.4)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke:  red; /* Brighter purple glow */
+        filter: drop-shadow(0 0 19px red); /* Stronger purple glow with shadow */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(255, 0, 0, 0.4); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.4)); /* Shadow effect */
+
+    }
+}
+
+/* Apply glow effect only to the circle inside the SVG with data-circle="NutritionProtein" */
+.nutritionsugarglow {
+    animation: nutritionsugarglow 1.5s infinite ease-in-out;
+}
+
+/* Apply glow animation when the 'nutritionproteinnglow' class is added */
+svg[data-circle="NutritionSugar"] .nutrition-progress.nutritionsugarglow {
+    animation: nutritionsugarglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+#sodiumprogress{
+    stroke:  red; /* Brighter purple glow */
+
+}
+
+@keyframes nutritionsodiumglow {
+    0% {
+        stroke-width: 8;
+        stroke: rgba(255, 0, 0, 0.4); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.4)); /* Shadow effect */
+
+
+    }
+    50% {
+        stroke-width: 12;
+        stroke:  red; /* Brighter purple glow */
+        filter: drop-shadow(0 0 19px red); /* Stronger purple glow with shadow */
+
+    }
+    100% {
+        stroke-width: 8;
+        stroke: rgba(255, 0, 0, 0.4); /* Brighter purple glow */
+        filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.4)); /* Shadow effect */
+
+    }
+}
+
+/* Apply glow effect only to the circle inside the SVG with data-circle="NutritionProtein" */
+.nutritionsodiumglow {
+    animation: nutritionsodiumglow 1.5s infinite ease-in-out;
+}
+
+/* Apply glow animation when the 'nutritionproteinnglow' class is added */
+svg[data-circle="NutritionSodium"] .nutrition-progress.nutritionsodiumglow {
+    animation: nutritionsodiumglow 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#savedMealsContainerProtein{
+    border: 1px solid #ccc;
+    z-index: 9999999999;
+    width: 400px;
+    height: 330px;
+    /* margin: 20px auto; */
+    border-radius: 40px;
+    background: #f9f9f9;
+    padding: 10px;
+    margin-top: -500px;
+    margin-left: 250px;
+}
+
+
+#savedMealsListProtein {
+    z-index: 9999999999;
+    border: 2px solid #ddd;
+    border-radius: 40px;
+    height: 300px;
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 10px;
+    overflow-x: hidden;  
+
+}
+
+
+
+
+
+
+
+
+
+    
+

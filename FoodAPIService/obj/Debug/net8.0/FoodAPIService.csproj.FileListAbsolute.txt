@@ -1,0 +1,12 @@
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/bin/Debug/net8.0/FoodAPIService.deps.json
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/bin/Debug/net8.0/FoodAPIService.dll
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/bin/Debug/net8.0/FoodAPIService.pdb
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/obj/Debug/net8.0/FoodAPIService.csproj.AssemblyReference.cache
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/obj/Debug/net8.0/FoodAPIService.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/obj/Debug/net8.0/FoodAPIService.AssemblyInfoInputs.cache
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/obj/Debug/net8.0/FoodAPIService.AssemblyInfo.cs
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/obj/Debug/net8.0/FoodAPIService.csproj.CoreCompileInputs.cache
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/obj/Debug/net8.0/FoodAPIService.dll
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/obj/Debug/net8.0/refint/FoodAPIService.dll
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/obj/Debug/net8.0/FoodAPIService.pdb
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/FoodAPIService/obj/Debug/net8.0/ref/FoodAPIService.dll

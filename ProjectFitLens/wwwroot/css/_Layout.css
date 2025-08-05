@@ -1,0 +1,5 @@
+.username {
+    font-size: 150px;      /* Adjust font size for username */
+    font-weight: bold;      /* Make it bold if desired */
+    color: #333;            /* Optional: Change color */
+}

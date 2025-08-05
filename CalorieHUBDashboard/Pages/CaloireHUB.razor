@@ -1,0 +1,899 @@
+@page "/CaloireHUB"
+
+
+
+
+<a asp-controller="Exercise" asp-action="Home" asp-area="User">
+    <div class="button">
+        <span class="back arrow"></span>
+
+    </div>
+</a>
+
+
+<a asp-controller="RegisterLogin" asp-action="Logout">
+    <span class="material-symbols-outlined signout">
+        logout
+    </span>
+</a>
+
+
+
+<div class="date-container">
+    <span class="date">Today</span>
+    <div class="dropdown-calendar hidden">
+        <div class="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <span id="current-month-year"></span>
+            <button id="next-month">&gt;</button>
+        </div>
+        <table class="calendar">
+            <thead>
+            <tr>
+                <th>Su</th>
+                <th>Mo</th>
+                <th>Tu</th>
+                <th>We</th>
+                <th>Th</th>
+                <th>Fr</th>
+                <th>Sa</th>
+            </tr>
+            </thead>
+            <tbody id="calendar-body">
+            <!-- JavaScript will populate the calendar here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container1">
+    <div class="profile-pic center" style="background-image: url(https://specials-images.forbesimg.com/imageserve/59d5062131358e542c034eb7/416x416.jpg?background=000000&cropX1=419&cropX2=1409&cropY1=53&cropY2=1044)"></div>
+    <div class="sonar-container">
+        <div class="sonar center"></div>
+        <div class="sonar center delay"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<head>
+    
+    <meta name="csrf-token" content="">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link href="~/css/CalorieDashboard.css" rel="stylesheet" type="text/css">
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+
+<div class="card-container">
+
+    <div class="card">
+
+        <span class= "cardtitlemain">Calories</span>
+        <div class="circle-big">
+            <svg class="progress-circle" width="120" height="120">
+                <circle class="bg" cx="60" cy="60" r="52"></circle>
+                <circle class="progress" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div class="text">
+                <span id="totalCaloriesDisplay" >0</span><br />
+                <span class="remaining">Remaining</span>
+            </div>
+        </div>
+        <div>
+      
+
+     <span class="material-symbols-outlined energy">
+  <span class="number">123</span>
+  local_fire_department
+</span>
+
+            <span class="goal1-container">
+  <span class="goalnumber" id="calorieGoal"></span> <!-- Number on top of the goal icon -->
+  <span class="material-symbols-outlined goal1">emoji_events</span>
+</span>
+
+        </div>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card2">
+
+        <div class="card-title2">Macros</div>
+
+        <div class="circle-container">
+
+
+
+            <!-- Circle 1 -->
+            <div class="circle-big2">
+                <div class="circle-title">Protein</div> <!-- Title -->
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text" x="50%" y="50%" dy=".3em">
+                        <tspan x="55%" dy="-0.2em" class="main-text"> g</tspan>
+                        <!-- First line -->
+                        <tspan x="36%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                    </text>
+                </svg>
+            </div>
+
+            <!-- Circle 2 -->
+            <div class="circle-big2">
+                <div class="circle-title">Carbs</div> <!-- Title -->
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text" x="50%" y="50%" dy=".3em">
+                        <tspan x="55%" dy="-0.2em" class="main-text"> g</tspan>
+                        <!-- First line -->
+                        <tspan x="36%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                    </text>
+                </svg>
+            </div>
+
+            <!-- Circle 3 -->
+            <div class="circle-big2">
+                <div class="circle-title">Fats</div> <!-- Title -->
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text" x="50%" y="50%" dy=".3em">
+                        <tspan x="55%" dy="-0.2em" class="main-text"> g</tspan>
+                        <!-- First line -->
+                        <tspan x="36%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                    </text>
+                </svg>
+            </div>
+
+            <!-- Circle 4 -->
+            <div class="circle-big2">
+                <div class="circle-title">Fiber</div> <!-- Title -->
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text" x="50%" y="50%" dy=".3em">
+                        <tspan x="55%" dy="-0.2em" class="main-text"> g</tspan> <!-- First line -->
+
+                        <tspan x="36%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                    </text>
+                </svg>
+            </div>
+
+            <!-- Circle 5 -->
+            <div class="circle-big2">
+                <div class="circle-title">Sugar</div> <!-- Title -->
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text" x="50%" y="50%" dy=".3em">
+                        <tspan x="55%" dy="-0.2em" class="main-text">g</tspan> <!-- First line -->
+
+                        <tspan x="36%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                    </text>
+                </svg>
+            </div>
+
+            <!-- Circle 6 -->
+            <div class="circle-big2">
+                <div class="circle-title">Sodium</div> <!-- Title -->
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text" x="50%" y="50%" dy=".3em">
+                        <tspan x="45%" dy="-0.2em" class="main-text"> mg</tspan>
+                        <tspan x="38%" dy="1.5em" class="remaining-text">Remaining</tspan> <!-- Second line -->
+                    </text>
+                </svg>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="small-circle-container2">
+            <!-- Smaller Circles -->
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Vitamin A</div>
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Vitamin C</div>
+
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+            </div>
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Vitamin D</div>
+
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+            </div>
+
+
+
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Vitamin E</div>
+
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+            </div>
+
+
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Vitamin K</div>
+
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+            </div>
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Calcium</div>
+
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+            </div>
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Iron</div>
+
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+            </div>
+
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Magnesium</div>
+
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+            </div>
+
+
+            <div class="small-circle">
+                <div class="circle-title2">Potassium</div>
+
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+            </div>
+
+            <div class="small-circle">
+                <div class="circle-title2">Zinc</div>
+
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+            </div>
+
+            
+
+            <div class="small-circle">
+                <div class="circle-title2">Phosphorus</div>
+
+                <svg viewBox="0 0 120 120">
+                    <circle class="bg" cx="60" cy="60" r="50" />
+                    <circle class="progress" cx="60" cy="60" r="50" />
+                    <text class="text2" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
+                        <tspan dy="-0.2em">30%</tspan>
+                    </text>
+                </svg>
+            </div>
+
+
+            
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="center-wrapper10">
+    <!-- Horizontal Scrollable Container for Cards -->
+    <div class="card10" id="infiniteScrollContainer">
+        <!-- Card 1 -->
+        <div class="card10-item">
+            <div class="dashboard">
+                <canvas id="miniLineGraph"></canvas>
+
+                <div class="stat-bar">
+                    <div class="stat">
+                        <span class="material-symbols-outlined">download_done</span>
+                        <div class="stat-val">98</div>
+                        <div class="stat-label">Total Runs</div>
+                    </div>
+                    <div class="stat">
+                        <span class="material-symbols-outlined">avg_pace</span>
+                        <div class="stat-val">7'37''</div>
+                        <div class="stat-label">AVG Pace</div>
+                    </div>
+                    <div class="stat">
+                        <span class="material-symbols-outlined">heart_plus</span>
+                        <div class="stat-val">1421</div>
+                        <div class="stat-label">AVG Heartrate</div>
+                    </div>
+                </div>
+
+                <div class="activity-bar">
+                    <div class="val">756.3</div>
+                    <div class="stat-label">TOTAL MILES</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Card -->
+        <div class="card10-item">
+            <div class="dashboard">
+                <canvas id="miniLineGraph"></canvas>
+
+                <div class="stat-bar">
+                    <div class="stat">
+                        <span class="material-symbols-outlined">download_done</span>
+                        <div class="stat-val">98</div>
+                        <div class="stat-label">Total Runs</div>
+                    </div>
+                    <div class="stat">
+                        <span class="material-symbols-outlined">avg_pace</span>
+                        <div class="stat-val">7'37''</div>
+                        <div class="stat-label">AVG Pace</div>
+                    </div>
+                    <div class="stat">
+                        <span class="material-symbols-outlined">heart_plus</span>
+                        <div class="stat-val">1421</div>
+                        <div class="stat-label">AVG Heartrate</div>
+                    </div>
+                </div>
+
+                <div class="activity-bar">
+                    <div class="val">756.3</div>
+                    <div class="stat-label">TOTAL MILES</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional cards can be added here -->
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card-container99">
+    <div class="card99">
+        <div class="headings-container">
+            <h5 class="add-food-heading" onclick="toggleFoodForm()">Order Food</h5>
+            <h5 class="add-food-heading" onclick="showQuickAddForm()">Quick Add</h5>
+        </div>
+
+
+        <!-- Hidden search form -->
+        <div id="togglefoodForm" class="hidden">
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search for food..."
+                onkeyup="searchFood()"
+            />
+
+            <!-- Dynamic search results -->
+            <div id="searchResults" class="search-results">
+                <!-- Matching results will appear here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="nutritionModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2>Enter Nutritional Information</h2>
+        <form id="nutritionForm">
+            <label for="brand">*Brand / Restaurant:</label>
+            <input type="text" id="brand" name="brand" placeholder="Generic">
+            <br>
+            <label for="description">*Food Description:</label>
+            <input type="text" id="description" name="description" placeholder="Crackers">
+
+
+            <hr>
+            <h3>Serving Information</h3>
+            <label for="servingSize">Serving Size:</label>
+            <input type="text" id="servingSize" name="servingSize" placeholder="e.g., 1">
+            <br>
+            <label for="unit">Unit:</label>
+            <input type="text" id="unit" name="unit" placeholder="e.g., cup">
+            <br>
+            <label for="servingsPerContainer">Servings Per Container:</label>
+            <input type="number" id="servingsPerContainer" name="servingsPerContainer" placeholder="e.g., 10">
+            <hr>
+
+
+
+
+
+
+            <h3>Nutrition Facts</h3>
+
+            <!-- Main Nutritional Information -->
+            <label for="calories">Calories:</label>
+            <input type="number" id="calories" name="calories">
+            <br>
+            <label for="sodium">Sodium (mg):</label>
+            <input type="number" id="sodium" name="sodium">
+            <br>
+            <label for="sugar">Sugar (g):</label>
+            <input type="number" id="sugar" name="sugar">
+            <br>
+            <label for="totalFat">Total Fat (g):</label>
+            <input type="number" id="totalFat" name="totalFat">
+            <br>
+            <label for="carbs">Total Carbs (g):</label>
+            <input type="number" id="carbs" name="carbs">
+            <br>
+            <label for="fiber">Dietary Fiber (g):</label>
+            <input type="number" id="fiber" name="fiber">
+
+            <hr>
+
+            <!-- Additional Nutritional Information -->
+            <h4>Additional Nutrients</h4>
+            <div class="additional-nutrients">
+                <label for="vitaminA">Vitamin A (%):</label>
+                <input type="number" id="vitaminA" name="vitaminA" class="small-input">
+
+                <label for="vitaminC">Vitamin C (%):</label>
+                <input type="number" id="vitaminC" name="vitaminC" class="small-input">
+
+                <label for="vitaminK">Vitamin K (%):</label>
+                <input type="number" id="vitaminK" name="vitaminK" class="small-input">
+
+                <label for="calcium">Calcium (%):</label>
+                <input type="number" id="calcium" name="calcium" class="small-input">
+
+                <label for="iron">Iron (%):</label>
+                <input type="number" id="iron" name="iron" class="small-input">
+
+                <label for="magnesium">Magnesium (%):</label>
+                <input type="number" id="magnesium" name="magnesium" class="small-input">
+
+                <label for="zinc">Zinc (%):</label>
+                <input type="number" id="zinc" name="zinc" class="small-input">
+
+                <label for="vitaminD">Vitamin D (%):</label>
+                <input type="number" id="vitaminD" name="vitaminD" class="small-input">
+
+                <label for="vitaminE">Vitamin E (%):</label>
+                <input type="number" id="vitaminE" name="vitaminE" class="small-input">
+
+                <label for="potassium">Potassium (mg):</label>
+                <input type="number" id="potassium" name="potassium" class="small-input">
+            </div>
+
+           
+
+            <button type="submit" id="saveButton">Save</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container8">
+    <div class="card3">
+
+        <span class="material-symbols-outlined card-icon3">menu_book</span>
+        <h1 class="card3label">Food Log</h1>
+        <div class="add-food-container">
+        </div>
+
+
+        <div class="card4">
+            <div class="table-responsive-vertical shadow-z-1">
+                <table class="custom-table">
+                    <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Calories</th>
+                        <th>Protein</th>
+                        <th>Fats</th>
+                        <th>Fiber</th>
+                        <th>Sugar</th>
+                        <th>Sodium</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="foodLogTableBody">
+
+
+
+
+                    <!-- Dynamic rows will be added here -->
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="~/js/QuickAdd.js"></script>
+<script src="~/js/SearchFood.js"></script>
+<script src="~/js/Calender.js"></script>
+<script src="~/js/exerciseGraph.js"></script>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

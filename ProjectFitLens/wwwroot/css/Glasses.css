@@ -1,0 +1,122 @@
+.glasses {
+    position: relative;
+    width: 168.3px;
+    height: 102px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.glasses .lens {
+    width: 85%;
+    height: 80%;
+    background: #161616;
+    border-radius: 50%;
+    position: relative;
+    border: 5px solid #fff;
+}
+.glasses .lens .eye {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60%;
+    width: 104%;
+    background: #fff;
+    border-radius: 50%;
+}
+.glasses .lens .eye::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    border-radius: 0 0 50% 50%;
+    background: #161616;
+    -webkit-animation: blink 4s infinite ease-in;
+    animation: blink 4s infinite ease-in;
+}
+.glasses .lens .eye-pupil {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 40%;
+    width: 25%;
+    background: #161616;
+    border-radius: 50%;
+    -webkit-animation: look-around 4s infinite;
+    animation: look-around 4s infinite;
+}
+@-webkit-keyframes look-around {
+    0% {
+        transform: translate(-50%, 0);
+    }
+    5% {
+        transform: translate(0, -15%);
+    }
+    10% {
+        transform: translate(0, -45%);
+    }
+    15% {
+        transform: translate(-100%, -25%);
+    }
+    20% {
+        transform: translate(-100%, -25%);
+    }
+    25% {
+        transform: translate(-80%, 0);
+    }
+    100% {
+        transform: translate(-70%, 0);
+    }
+}
+@keyframes look-around {
+    0% {
+        transform: translate(-50%, 0);
+    }
+    5% {
+        transform: translate(0, -15%);
+    }
+    10% {
+        transform: translate(0, -45%);
+    }
+    15% {
+        transform: translate(-100%, -25%);
+    }
+    20% {
+        transform: translate(-100%, -25%);
+    }
+    25% {
+        transform: translate(-80%, 0);
+    }
+    100% {
+        transform: translate(-70%, 0);
+    }
+}
+.glasses .arm {
+    position: absolute;
+    top: 20%;
+    height: 5px;
+    width: 90px;
+    background: #fff;
+    border-radius: 5px;
+    transform: translateY(-50%);
+}
+.glasses .arm--left {
+    left: -65px;
+    transform: rotate(58deg);
+}
+.glasses .arm--right {
+    right: -65px;
+    transform: rotate(-58deg);
+}
+
+html {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #161616;
+}

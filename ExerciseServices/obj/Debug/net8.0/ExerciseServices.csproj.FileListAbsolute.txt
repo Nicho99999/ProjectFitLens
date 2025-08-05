@@ -1,0 +1,12 @@
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/bin/Debug/net8.0/ExerciseServices.deps.json
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/bin/Debug/net8.0/ExerciseServices.dll
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/bin/Debug/net8.0/ExerciseServices.pdb
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/obj/Debug/net8.0/ExerciseServices.csproj.AssemblyReference.cache
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/obj/Debug/net8.0/ExerciseServices.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/obj/Debug/net8.0/ExerciseServices.AssemblyInfoInputs.cache
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/obj/Debug/net8.0/ExerciseServices.AssemblyInfo.cs
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/obj/Debug/net8.0/ExerciseServices.csproj.CoreCompileInputs.cache
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/obj/Debug/net8.0/ExerciseServices.dll
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/obj/Debug/net8.0/refint/ExerciseServices.dll
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/obj/Debug/net8.0/ExerciseServices.pdb
+/Users/nicho/Library/Mobile Documents/com~apple~CloudDocs/C# Projects/ProjectFitLens/ExerciseServices/obj/Debug/net8.0/ref/ExerciseServices.dll
